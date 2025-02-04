@@ -1,0 +1,161 @@
+/*Adaptation*/
+@media screen and (max-width:1650px){
+    .logo{        
+        max-width: 450px;    
+    }
+    .container{
+        padding: 10px 150px;   
+    }
+    .header-nav{  
+        font-size: 16px; 
+    } 
+}
+
+@media screen and (max-width:1245px){
+       .logo{        
+        max-width: 350px; 
+        padding:5px 0px  ;   
+    }
+    .container{
+        padding: 10px 100px;   
+    }
+    .header-nav{  
+        font-size: 14px; 
+        a{
+            padding: 0 5px;   
+        }  
+    } 
+
+    /*section 2 Kontent*/
+    .title{           
+        font-size: 40px;
+        span{            
+            font-size: 60px;             
+        } 
+    }
+    .grid_content{    
+        gap:25px 15px;        
+    }
+    .course-item{ 
+        img {
+            padding:15px;            
+            }
+       h3{            
+            font-size: 18px;            
+        }    
+        }
+
+        /*section 3 Footer*/
+    .footer_item{    
+        padding:30px 70px; 
+        font-size:12px ;
+        img{           
+            margin-right: 7px;          
+        }                
+    }
+}
+
+@media screen and (max-width:835px){
+    .logo{        
+     max-width: 250px; 
+     padding:0;   
+ }
+ .container{
+     padding: 10px 30px;   
+ }
+ .header-nav{  
+     font-size: 13px; 
+     a{
+         padding: 0 5px;   
+     }  
+ } 
+ .cover{
+    height: 350px;
+ }
+
+ /*section 2 Kontent*/
+ .title{           
+    font-size: 30px;
+    span{            
+        font-size: 50px;             
+    }
+}
+.grid_content{    
+    gap:20px 10px;        
+}
+.course-item{ 
+    img {
+        padding:15px;            
+        }
+   h3{            
+        font-size: 15px;            
+    }    
+    }
+
+ /*Section 3 footer*/
+ .footer_item{    
+    padding:30px 40px; 
+    font-size:8px ;
+    .rotenplan{
+        font-size: 8px;
+    }
+    img{
+        width: 15px;           
+        margin-right:3px;          
+    }                
+}
+.untre-footer{
+    font-size: 5px;
+}
+}
+
+@media screen and (max-width:580px){
+    .container{
+        padding: 10px 20px;   
+    }
+    .logo{        
+        max-width: 185px;        
+    }
+    .header-nav{  
+        font-size: 9px;     
+    }
+
+    /*section 2 Kontent*/
+ .title{           
+    font-size: 25px;
+    span{            
+        font-size: 35px;             
+    }
+}
+.grid_content{
+grid-template-columns: repeat(2,1fr);
+ }
+}
+
+@media screen and (max-width:424px){
+    .container{
+        padding: 10px 15px;   
+    }
+    .header-nav{  
+        font-size: 8px;  
+        a{
+            padding: 0 3px;   
+        }     
+    }
+    .logo{        
+        max-width: 175px;        
+    }
+    .cover{
+        height: 250px;
+     }
+    .footer_item{    
+        padding:30px 40px; 
+        font-size:7px ;
+        .rotenplan{
+            font-size: 7px;
+        }
+    }
+    .kontact{
+        padding-top:20px ;
+    }
+}

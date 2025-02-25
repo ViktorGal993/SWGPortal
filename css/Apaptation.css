@@ -159,3 +159,46 @@ grid-template-columns: repeat(2,1fr);
         padding-top:20px ;
     }
 }
+
+/*Support window*/
+@media screen and (max-width:1550px){
+    .modal__support {                      
+        left: 25%;       
+        width:50%; 
+}
+}
+
+@media screen and (max-width:1245px){
+.modal__support {
+     .modal__footer {
+        h2{
+            font-size: 16px;
+        }                   
+     }
+    }
+}
+
+@media screen and (max-width:975px){
+    .modal__support {        
+                              
+        .inpuut__contact {           
+            justify-content: center;        
+            .input__input {
+                width: 220px;                
+            }                    
+        }
+        .input__title {
+                h2 {
+                    font-size: 16px;
+                }                  
+       }   
+    }    
+}
+
+@media screen and (max-width:580px){
+    .modal__support {                      
+        left: 15%;       
+        width:70%;       
+        
+      }
+}

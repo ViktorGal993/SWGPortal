@@ -1,0 +1,320 @@
+/*Adaptation*/
+@media screen and (max-width:1650px){
+    .logo{        
+        max-width: 450px;    
+    }
+    .container{
+        padding: 10px 150px;   
+    }
+    .header-nav{  
+        font-size: 16px; 
+    } 
+}
+
+@media screen and (max-width:1245px){
+       .logo{        
+        max-width: 350px; 
+        padding:5px 0px  ;   
+    }
+    .container{
+        padding: 10px 100px;   
+    }
+    .header-nav{  
+        font-size: 14px; 
+        a{
+            padding: 0 5px;   
+        }  
+    } 
+
+    /*section 2 Kontent*/
+    .title{           
+        font-size: 40px;
+        span{            
+            font-size: 60px;             
+        } 
+    }
+
+    .grid_content{    
+        gap:25px 15px;        
+    }
+
+    .course-item{ 
+        img {
+            padding:15px;            
+            }
+       h3{            
+            font-size: 18px;            
+        }    
+        }
+    .kontakt_funktion{
+        padding-top: 15px;
+        .kontakt_link {
+            font-size: 17px;
+            font-weight: 700;
+        }
+    }
+
+    /*section 3 Footer*/
+    .footer_item{    
+        padding:30px 70px; 
+        font-size:12px ;
+        img{           
+            margin-right: 7px;          
+        }                
+    }
+
+/*kunden Portal*/
+    .kunden_portal {
+        width: 90vh;
+    }
+}
+
+@media screen and (max-width:835px){
+    .logo{        
+     max-width: 250px; 
+     padding:0;   
+ }
+
+ .container{
+     padding: 10px 30px;   
+ }
+
+ .header-nav{  
+     font-size: 13px; 
+     a{
+         padding: 0 5px;   
+     }  
+ } 
+
+ .cover{
+    height: 350px;
+ }
+
+ /*section 2 Kontent*/
+ .title{           
+    font-size: 30px;
+    span{            
+        font-size: 50px;             
+    }
+}
+
+.grid_content{    
+    gap:20px 10px;        
+}
+
+.course-item{ 
+    img {
+        padding:15px;            
+        }
+   h3{            
+        font-size: 15px;            
+    }    
+    }
+
+    .kontakt_funktion{
+        .kontakt_link {
+            font-size: 15px;
+            font-weight: 700;
+        }
+    }
+
+ /*Section 3 footer*/
+ .footer_item{    
+    padding:30px 40px; 
+    font-size:8px ;
+    .rotenplan{
+        font-size: 8px;
+    }
+    img{
+        width: 15px;           
+        margin-right:3px;          
+    }                
+}
+
+.untre-footer{
+    font-size: 5px;
+}
+
+/*KundenPortal*/
+
+.kunden_portal {
+    width: 60vh;
+    padding: 10px; 
+
+    .fiks_kontent {        
+        width: 200px;
+
+        .fix_foto {
+            margin: 15px auto;
+            width: 110px;
+            height: 110px;
+
+            button {
+                font-size: 10px;
+                margin: 30% auto;            
+               } 
+        }
+
+        .person_daten {
+            margin-top: 30px;  
+            padding:10px;                    
+            input {
+                width: 100px;
+                min-height: 30px;                  
+                font-size: 10px;                                       
+            }
+
+            h2 {
+                font-size: 17px;
+            }
+        }
+    }
+
+    .kunden_portal_info {
+        width: 500px;
+        padding:5px; 
+        margin: 10px 10px 0 0;           
+        img {               
+            padding:5px 10px 5px 5px;
+            width: 230px;                          
+        } 
+
+        .kp_user_input {                   
+            input {                   
+                font-size: 20px; 
+                }          
+        }
+    } 
+
+    .kp_users_tickets {
+        h2 {
+            font-size: 17px;
+        }
+
+        input {                             
+                min-height: 70px;                   
+                font-size: 15px;                      
+        }
+    }             
+}  
+/*Ende KundenPortal*/
+}
+
+@media screen and (max-width:580px){
+    .container{
+        padding: 10px 20px;   
+    }
+    .logo{        
+        max-width: 185px;        
+    }
+    .header-nav{  
+        font-size: 9px;     
+    }
+
+    /*section 2 Kontent*/
+ .title{           
+    font-size: 25px;
+    span{            
+        font-size: 35px;             
+    }
+}
+.grid_content{
+grid-template-columns: repeat(2,1fr);
+ }
+
+ /*Kunden Portal*/
+ .kunden_portal {
+    width: 100%;
+    margin:10px;
+}
+
+.close__portal {
+    margin-right: 10px;
+    button {
+        img {
+            width: 38px;
+        }
+    }
+}
+
+/*Ende Kunden Portal*/
+}
+
+@media screen and (max-width:424px){
+    .container{
+        padding: 10px 15px;   
+    }
+    .header-nav{  
+        font-size: 8px;  
+        a{
+            padding: 0 3px;   
+        }     
+    }
+    .logo{        
+        max-width: 175px;        
+    }
+    .cover{
+        height: 250px;
+     }
+    .footer_item{    
+        padding:30px 40px; 
+        font-size:7px ;
+        .rotenplan{
+            font-size: 7px;
+        }
+    }
+    .kontact{
+        padding-top:20px ;
+    }
+
+    .kontakt_funktion{
+        padding-top: 0;
+        .kontakt_link {
+            font-size: 13px;
+            font-weight: 600;
+        }
+    }
+}
+
+/*Support window*/
+@media screen and (max-width:1550px){
+    .modal__support {                      
+        left: 25%;       
+        width:50%; 
+}
+}
+
+@media screen and (max-width:1245px){
+.modal__support {
+     .modal__footer {
+        h2{
+            font-size: 16px;
+        }                   
+     }
+    }
+}
+
+@media screen and (max-width:975px){
+    .modal__support {        
+                              
+        .inpuut__contact {           
+            justify-content: center;        
+            .input__input {
+                width: 220px;                
+            }                    
+        }
+        .input__title {
+                h2 {
+                    font-size: 16px;
+                }                  
+       }   
+    }    
+}
+
+@media screen and (max-width:580px){
+    .modal__support {                      
+        left: 15%;       
+        width:70%;       
+        
+      }
+}

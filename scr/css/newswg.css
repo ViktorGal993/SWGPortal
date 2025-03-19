@@ -25,6 +25,9 @@ img {
     a:hover{
         color: #94c11f;
     }
+    button:hover {
+        color: #94c11f;
+    }
 }
 
 .center_uppercase{
@@ -55,7 +58,11 @@ header{
     font-weight: 700;
     a{
         padding: 0 10px;   
-    }    
+    } 
+    button {
+        all:unset;
+        padding: 0 10px; 
+    }   
 }
 
 /* cover */
@@ -214,6 +221,11 @@ header{
     li{       
         margin: 20px 0;
         padding:15px 20px;
+
+        button  {
+            all:unset;
+
+        }
     } 
    .kontakt_link{   
     box-shadow: 0 3px 25px rgba(148,193,31, 0.7);
@@ -253,7 +265,7 @@ header{
     display:none;        
     position: fixed;
     z-index: 1;        
-    top: 15%;
+    top: 25%;
     left: 30%;       
     width:40%;
     min-height: 60px;
@@ -304,14 +316,34 @@ header{
             padding:10px; 
         }
 
+       .input__name {
+        label {
+            display: block;
+            font-size: 21px;
+            font-weight: 700;
+        }
+
+        }
+
         .input__email{
-                width: 220px;
+            width: 220px;
+            label {
+                display: block;
+                font-size: 21px;
+                font-weight: 700;
+            }
+                
         }
         
     }
 
     .input__title {
-        margin-top: 40px;        
+        margin-top: 40px; 
+        label {
+            display: block;
+            font-size: 21px;
+            font-weight: 700;
+        }       
         textarea {
             margin: 10px 0;
             width: 100%;
@@ -324,6 +356,7 @@ header{
     }
 
     .button__senden {
+        font-weight: 700;
         display: block;
         margin: 0 auto;
         width: 200px;
@@ -338,6 +371,139 @@ header{
         background:linear-gradient(to right,#94c11f, #D9D9D9 );
     }     
 }
+
+/*Ende Modals suppurt*/
+
+/*modals Termin*/
+
+.modal__termin {
+    display: none;       
+    position: fixed;
+    z-index: 1;        
+    top: 25%;
+    left: 30%;       
+    width:40%;
+    min-height: 60px;
+    box-shadow: 0px 10px 50px 0px #94c11f;    
+    background-color:rgba(253, 253, 253, 0.9);
+
+    .close__termin {            
+        display: flex; 
+        justify-content: end; 
+        padding: 10px 10px 0 0;
+        button{
+            all:unset; 
+            position: absolute;
+        }     
+    } 
+         
+    .modal__footer {
+        margin-top: 27px;
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        padding: 0 10px; 
+        padding-bottom: 10px; 
+        box-shadow: 0 10px 6px rgba(148,193,31, 0.1);        
+        border-bottom:2px solid #94c11f;
+        h2 {
+            span {
+                 display:flex;
+                justify-content: center;
+                font-size: 30px;
+                font-weight: 800;
+                text-transform: uppercase;
+                
+            }
+        }
+        img {
+            width: 30%;
+        }
+    }
+
+    .weaper {
+        margin-top:20px;
+        padding: 15px;  
+    } 
+
+    .inpuut__contact {
+        display: flex;
+        align-items:end;
+        flex-wrap: wrap;        
+        .input__input {
+            width: 170px;
+            min-height: 35px;
+            border-radius: 5px;
+            border:none;
+            box-shadow: 0 10px 6px rgba(12, 12, 12, 0.1);  
+            font-size: 14px;   
+            margin:10px 10px 10px 0;
+            padding:10px; 
+        }
+
+       .input__name {
+        label {
+            display: block;
+            font-size: 21px;
+            font-weight: 700;
+        }
+        }
+
+        .input__email{
+            width: 220px;
+            label {
+                display: block;
+                font-size: 21px;
+                font-weight: 700;
+            }
+                
+        }
+        
+    }
+
+    .button__senden {
+        font-weight: 700;
+        display: block;
+        margin: 0 auto;
+        width: 200px;
+        min-height: 40px;
+        border-radius: 5px;        
+        border-style: none;
+        box-shadow: 0 10px 6px rgba(12, 12, 12, 0.1);
+        background:linear-gradient(to right, #D9D9D9, #94c11f );
+        transition: background 0.3s ease; 
+        margin-bottom: 20px;   
+    }
+
+    .button__senden:hover{
+        background:linear-gradient(to right,#94c11f, #D9D9D9 );
+    }
+    
+    .termin_date_zeit {
+        margin: 30px 0 50px 0;
+        display: flex;
+        justify-content: flex-start;
+        .termin__datum {
+            label {
+                display: block;
+                margin-bottom: 10px;
+            }
+            input {
+                width: 170px;                
+                border-radius: 5px;
+                border:none;
+                box-shadow: 0 10px 6px rgba(12, 12, 12, 0.1);  
+                font-size: 14px;   
+                margin:10px 30px 0 0;
+                padding:10px;                 
+            }
+
+        }
+    }
+
+}
+
+/*Ende Modals Termin*/
 
 /*modals Kunden Portal*/
 

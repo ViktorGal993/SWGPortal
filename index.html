@@ -15,15 +15,16 @@
 <body>
     
 <header id="header" class="container">
-<div class="logo">
-    <img src="scr/imgg/SWG_LOGO2.png" alt="logo2">    
+<div class="logo animat"><a href="https://swg-datensysteme.de/">
+    <img src="scr/imgg/SWG_LOGO2.png" alt="logo2"> 
+</a>   
 </div>
    <!--<img src="iconss/SWG_small.png" alt="" id="rotatingImage"> -->
 <nav class="header-nav hover_green center_uppercase animat">
-    <a href="file:///C:/Users/praktikant/Desktop/www/HauptSWG.html">kontakt</a>
-    <a href="file:///C:/Users/praktikant/Desktop/www/%C3%9CberUns.html">Termin</a>
-    <a href="file:///C:/Users/praktikant/Desktop/www/partner.html">Frage</a>
-    <a href="file:///C:/Users/praktikant/Desktop/www/kontakt.html">Über Uns</a>    
+    <a href="https://swg-datensysteme.de/kontakt/">kontakt</a>
+    <button class="termin hover_green">Termin</button>
+    <button class="frage hover_green" >Frage</button>
+    <a href="https://swg-datensysteme.de/ueber-uns/">Über Uns</a>    
     </nav>
 </header>
 
@@ -57,31 +58,38 @@
             <div class="inpuut__contact">
 
                 <div class="input__name animat">
-                    <h2>Name</h2>
-                    <input placeholder="Name..." type="text" class="input__input">
+                    
+                    <label for="name">Name:</label>
+                    <input id="name"placeholder="Name..." type="text" class="input__input">
                 </div>
     
                 <div class="input__nachname animat">
-                    <input placeholder="Nachname..." type="text" class="input__input">
+                    <input id="nachname" placeholder="Nachname..." type="text" class="input__input">
                 </div>          
                 
-                <div class="inpuut__email animat">
-                    <h2>E-mail</h2>
-                    <input placeholder="E-Mail..." type="email" class="input__input input__email">
+                <div class="input__email animat">                   
+                    <label for="email">E-Mail:</label>
+                    <input id="email" placeholder="E-Mail..." type="email" class="input__input input__email">
                 </div>               
                 
-             </div>       
-            
-             <div class="input__title">
-             <h2>Beschreiben Sie das Problem</h2>
-             <textarea class="animat" placeholder="Hier schreiben..." name="message"></textarea>
             </div>
-            <input class="button__senden animat" type="submit" name="senden" id="">            
+
+            <div class="input__title">
+                <label for="message">Beschreiben Sie das Problem:</label>
+                <textarea id="message" class="animat" placeholder="Hier schreiben..." name="message"></textarea>
+            </div>
+
+            <button class="button__senden animat" type="submit" >Senden </button>
+
         </div>            
-    </form>    
+    </form> 
+    <!-- um dem Benutzer eine Rückmeldung über den Status seiner Buchung zu geben-->
+    <div id="ruckinfo" class="hidden"></div>
+
 </div>
-<!--ende des Modals support*/-->   
-    
+
+<!--ende des Modals support*/-->  
+
             <div class="grid_content center_uppercase">
 
               <button class="support__button animat">
@@ -101,7 +109,7 @@
                         <div class="kontakt_funktion">
                             <ul>
                              <li class="anruf kontakt_link hover_green animat2"><a href="#">Jetzt Anrufen</a></li>
-                             <li class="termin kontakt_link hover_green animat2" ><a href="#">termin buchen</a></li>
+                             <li class="termin kontakt_link hover_green animat2" ><button class="termin" href="#">termin buchen</button></li>
                              <li class="zuruckruf kontakt_link hover_green animat2"><a href="#">Rckruf anfordern</a></li>
                             </ul>
                                                
@@ -204,6 +212,8 @@
 
     </section>
 
+    
+
     <!--footer-->
     <footer>
         <div class="footer_item hover_green">
@@ -254,6 +264,64 @@
             <p>Copyright © 2018 SWG - Datensysteme GmbH. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Modals Termin -->         
+
+<div class="modal__termin">
+    <div class="close__support close__termin">
+        <button class="animat"><img src="scr/iconss/close.svg" alt=""></button>   
+    </div> 
+    
+    <div class="modal__footer">
+        <img src="scr/imgg/SWG_LOGO1.png" alt="logo1">
+        <h2><span>Terminplanung</span><br>Geben Sie bitte das Datum und die Uhrzeit an, zu der Sie Ihren Termin buchen möchten.</h2>        
+    </div>
+    
+    <form action="#" class="input">
+           
+        <div class="weaper">
+            <div class="inpuut__contact">
+
+                <div class="input__name animat">                    
+                    <label for="name">Name:</label>
+                    <input id="name"placeholder="Name..." type="text" class="input__input">
+                </div>
+    
+                <div class="input__nachname animat">
+                    <input id="nachname" placeholder="Nachname..." type="text" class="input__input">
+                </div>          
+                
+                <div class="input__email animat">                   
+                    <label for="email">E-Mail:</label>
+                    <input id="email" placeholder="E-Mail..." type="email" class="input__input input__email">
+                </div>               
+                
+            </div>
+
+            <div class="termin_date_zeit">
+
+                <div class="termin__datum animat">
+                    <label for="date">Gewünschte Datum:</label>
+                    <input type="date" id="date" required class="datepicker">
+                </div>
+    
+                <div class="termin__datum animat">
+                    <label for="time">Gewünschte Uhrzeit:</label>
+                    <input type="time" id="time" required>
+                </div> 
+
+            </div>                  
+        
+        <div>
+            <button id="ternin_buchen" class="button__senden animat" type="submit" >Termin buchen</button>
+        </div>            
+    </form> 
+    <!-- um dem Benutzer eine Rückmeldung über den Status seiner Buchung zu geben-->
+    <div id="confirmation" class="hidden"></div>
+
+</div>
+
+<!--Ende des Modals termin-->
   
 </main>
 <!-- /#main-->

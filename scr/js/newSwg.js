@@ -78,3 +78,41 @@ let support = document.querySelector(".support__button"),
 
 
 
+    /* Termin Kalender einrichten (Terminplanung)*/
+    let termin = document.querySelectorAll(".termin").forEach(btn =>{
+        btn.addEventListener('click',()=> 
+            termin_modal.style.display = "block")
+    }),
+    termin_modal = document.querySelector(".modal__termin"),
+    close_termin = document.querySelector(".close__termin");
+/*
+    termin.addEventListener("click", function(){
+        termin_modal.style.display = "block";
+    });
+*/
+    close_termin.addEventListener("click", function(){
+        termin_modal.style.display = "none";
+    });
+
+     /*Frage einrichten */
+     let frage = document.querySelector(".frage");     
+    frage.addEventListener("click", function(){
+        termin_modal.style.display = "block";
+    });
+
+    
+
+    /*die heutige Datum erhalten*/
+    document.addEventListener("DOMContentLoaded", function(){
+        let today = new Date().toISOString().split("T")[0];
+
+        /*deufault Datum einsetzen*/
+    let date_input =   
+    document.querySelector('#date');
+    date_input.min = today;
+    date_input.value = today;
+    });
+
+
+
+

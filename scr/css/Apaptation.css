@@ -25,6 +25,30 @@
     }
 }
 
+/*Support window*/
+@media screen and (max-width:1550px){
+    .modal__support {                      
+        left: 25%;       
+        width:50%; 
+}
+
+.modal_download_file {
+    .download_heder {
+        img {
+            width: 70%;
+        }
+    }
+
+}
+
+.downlod_files {
+    button {
+        margin: 10px;
+        padding-left: 0;
+    }
+}
+}
+
 @media screen and (max-width:1245px){
        .logo{        
         max-width: 350px; 
@@ -252,6 +276,12 @@
         }
 }
 }
+
+/*modal Download*/
+.modal_download {
+    width: 80%;
+    left:10%;
+}
 }
 
 @media screen and (max-width:580px){
@@ -304,6 +334,25 @@ grid-template-columns: repeat(2,1fr);
         }
     }
 }
+
+/*modal Download*/
+
+.modal_download_file {
+    .download_heder {
+        img {
+            width: 90%;
+        }
+    }
+
+    .downlod_files {
+        padding: 0;
+        margin: 0;
+        .download_content {
+            margin: 0;
+        }
+    }
+
+}
 }
 
 @media screen and (max-width:424px){
@@ -344,13 +393,14 @@ grid-template-columns: repeat(2,1fr);
     
 }
 
-/*Support window*/
-@media screen and (max-width:1550px){
-    .modal__support {                      
-        left: 25%;       
-        width:50%; 
-}
-}
+
+
+
+
+
+
+
+
 
 @media screen and (max-width:1245px){
 .modal__support {

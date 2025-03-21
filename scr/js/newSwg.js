@@ -100,6 +100,19 @@ let support = document.querySelector(".support__button"),
         termin_modal.style.display = "block";
     });
 
+    /*downlod Modal einrichten*/
+    let modal_download_btn = document.querySelector(".button_download"),
+        close_download = document.querySelector(".close__download"),
+        modal_download = document.querySelector(".modal_download");
+
+        modal_download_btn.addEventListener("click", function(){
+            modal_download.style.display = "block";
+        });
+
+        close_download.addEventListener("click", function(){
+            modal_download.style.display = "none";
+        });
+
     
 
     /*die heutige Datum erhalten*/

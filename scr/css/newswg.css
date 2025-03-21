@@ -127,6 +127,11 @@ header{
     all:unset;
 }
 
+.button_download {
+    all:unset;
+}
+
+
 /*footer*/   
 
 .footer_item{
@@ -650,6 +655,86 @@ header{
 
 
 /*End modals Kunden Portal*/
+
+/* Modals Download*/
+
+.modal {
+    display: none;       
+    position: fixed;
+    z-index: 1;        
+    top: 25%;
+    left: 15%;       
+    width:70%;
+    min-height: 60px;
+    box-shadow: 0px 10px 50px 0px #94c11f;    
+    background-color:rgba(253, 253, 253, 0.9);
+
+    .close {
+        padding: 10px;
+        display: flex; 
+        justify-content: end;         
+        button{
+            all:unset; 
+            position: absolute;
+        }
+    }
+
+}
+
+.modal_download_file {
+        padding:10px 50px;
+        min-height: 600px;
+             
+        .download_heder {     
+            box-shadow: 0 10px 6px rgba(148,193,31, 0.1);        
+            border-bottom:2px solid #94c11f;          
+
+            img {
+                display: block;
+                margin: 0 auto;
+                width: 50%;
+                padding: 10px;
+            }
+
+        }    
+
+        .downlod_files {
+            width: 70%;
+            display: block;
+            margin: 0 auto;
+            min-height: 60px;
+            border-bottom:2px solid #abaca8;
+            padding: 10px;
+
+            .download_content {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                align-items: center;
+                margin: 0 10px;
+            }
+            
+            a {
+                font-size: 20px;
+                font-weight:800;                             
+                
+            }
+            button {
+                font-weight:800;
+                font-size: 20px;                
+                padding: 10px; 
+                box-shadow: 0 13px 27px rgba(0,0,0, 0.2);  
+                border:1px solid #94c11f;      
+                              
+            }
+        }
+       
+    }
+
+    
+
+
+
 
 
 

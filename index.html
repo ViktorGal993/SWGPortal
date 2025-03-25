@@ -141,16 +141,18 @@
                 </button>
                 
 
-                <button class="portal__button animat">
+                <a class="portal__button animat" href="https://support.swg-datensysteme.de">
                 <div class="portal ">
                     <div class="course-item">
                         <img src="scr/imgg/menu/portal.jpg" alt="portal">
                         <h3>Kunden Portal</h3>
                     </div> 
                 </div>
-                </button>
+            </a>
+
 
 <!--modals Kunden Portal-->
+<!--
 
 <div class="kunden_portal">    
 
@@ -202,17 +204,21 @@
     </div> 
 
 </div>
+-->
 
 <!--Ende modals Kunden Portal-->
 
-                <div class="bewert animat">
-                    <div class="course-item">
-                        <img src="scr/imgg/menu/bewertungen.jpg" alt="Bewerbungen">
-                        <h3>Bewerbungen</h3>
-                        
-                        
-                    </div> 
-                </div>
+                <button class="button_bewerbung">
+                    <div class="bewert animat">
+                        <div class="course-item">
+                            <img src="scr/imgg/menu/bewertungen.jpg" alt="Bewerbungen">
+                            <h3>Bewerbungen</h3>                      
+                            
+                        </div> 
+                    </div>
+
+                </button>
+                
             </div>
         </div>
 
@@ -273,8 +279,8 @@
 
     <!-- Modals Termin -->         
 
-<div class="modal__termin">
-    <div class="close__support close__termin">
+<div class="modal modal__termin">
+    <div class="close close__termin">
         <button class="animat"><img src="scr/iconss/close.svg" alt=""></button>   
     </div> 
     
@@ -282,46 +288,49 @@
         <img class="termin__logo" src="scr/imgg/SWG_LOGO1.png" alt="logo1">
         <h2><span>Terminplanung</span><br>Geben Sie bitte das Datum und die Uhrzeit an, zu der Sie Ihren Termin buchen möchten.</h2>        
     </div>
+
+    <div class="modal_weaper">
     
-    <form action="#" class="input">
-           
-        <div class="weaper">
-            <div class="inpuut__contact">
+        <form action="#" class="input">
+            
+            <div class="weaper">
+                <div class="inpuut__contact">
 
-                <div class="input__name animat">                    
-                    <label for="name">Name:</label>
-                    <input id="name"placeholder="Name..." type="text" class="input__input">
-                </div>
-    
-                <div class="input__nachname animat">
-                    <input id="nachname" placeholder="Nachname..." type="text" class="input__input">
-                </div>          
-                
-                <div class="input__email animat">                   
-                    <label for="email">E-Mail:</label>
-                    <input id="email" placeholder="E-Mail..." type="email" class="input__input input__email">
-                </div>               
-                
-            </div>
-
-            <div class="termin_date_zeit">
-
-                <div class="termin__datum animat">
-                    <label for="date">Gewünschte Datum:</label>
-                    <input type="date" id="date" required class="datepicker">
-                </div>
-    
-                <div class="termin__datum animat">
-                    <label for="time">Gewünschte Uhrzeit:</label>
-                    <input type="time" id="time" required>
-                </div> 
-
-            </div>                  
+                    <div class="input__name animat">                    
+                        <label for="name">Name:</label>
+                        <input id="name"placeholder="Name..." type="text" class="input__input">
+                    </div>
         
-        <div>
-            <button id="ternin_buchen" class="button__senden animat" type="submit" >Termin buchen</button>
-        </div>            
-    </form> 
+                    <div class="input__nachname animat">
+                        <input id="nachname" placeholder="Nachname..." type="text" class="input__input">
+                    </div>          
+                    
+                    <div class="input__email animat">                   
+                        <label for="email">E-Mail:</label>
+                        <input id="email" placeholder="E-Mail..." type="email" class="input__input input__email">
+                    </div>               
+                    
+                </div>
+
+                <div class="termin_date_zeit">
+
+                    <div class="termin__datum animat">
+                        <label for="date">Gewünschte Datum:</label>
+                        <input type="date" id="date" required class="datepicker">
+                    </div>
+        
+                    <div class="termin__datum animat">
+                        <label for="time">Gewünschte Uhrzeit:</label>
+                        <input type="time" id="time" required>
+                    </div> 
+
+                </div>                  
+            
+            <div>
+                <button id="ternin_buchen" class="button__senden animat" type="submit" >Termin buchen</button>
+            </div>            
+        </form> 
+    </div>
     <!-- um dem Benutzer eine Rückmeldung über den Status seiner Buchung zu geben-->
     <div id="confirmation" class="hidden"></div>
 
@@ -334,9 +343,9 @@
         <button class="animat"><img src="scr/iconss/close.svg" alt=""></button>   
     </div>   
 
-    <div class="modal_download_file">
+    <div class="modal_weaper">
 
-        <div class="download_heder">
+        <div class="header">
             <img src="scr/imgg/SWG_LOGO2.png" alt="logo2">
         </div>
 
@@ -380,7 +389,45 @@
 
 <!--Ende des Modals Download-->
 
-<!--Ende des Modals termin-->
+
+<!-- Modal Bewerbungen-->
+<div class="modal modal_bewerb">
+
+    <div class="close close__bewerb ">
+        <button class="animat"><img src="scr/iconss/close.svg" alt=""></button>   
+    </div> 
+
+    <div class="modal_weaper">
+        <div class="header header_bewerb">
+            <img src="scr/imgg/SWG_LOGO2.png" alt="logo2">
+        </div>
+
+        <h2 class="title_bewerb">Lassen Sie uns gemeinsam Großes erreichen <br>
+            <span>– bewerben Sie sich und verstärken Sie unser Team</span></h2>
+
+        <div class="bewerb_upload">
+
+            <h2>Ihre Bewerbung im PDF-Format herunterladen:</h2>
+            <div class="bewerb_input">
+                <input class="animat2" type="file" id="pdf_file" accept="aplication/pdf" required>
+            </div>
+            
+
+            <button onclick="uploadPDF()" class="animat">herunterladen</button>
+
+            <p id="status"></p>
+        </div>
+
+    </div>
+    
+   
+
+
+
+</div>
+
+
+<!--Ende des Modals Bewerbungen-->
 
 
   

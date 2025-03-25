@@ -62,7 +62,7 @@ let support = document.querySelector(".support__button"),
     });
 
     /*Kunden Portal window einrichten*/
- 
+ /*
     let portal = document.querySelector(".portal__button"),
     kunden_potal_modal = document.querySelector(".kunden_portal"),
     close_close_kp = document.querySelector(".close__portal");
@@ -75,7 +75,7 @@ let support = document.querySelector(".support__button"),
         kunden_potal_modal.style.display = "none";
     });
 
-
+*/
 
 
     /* Termin Kalender einrichten (Terminplanung)*/
@@ -125,6 +125,51 @@ let support = document.querySelector(".support__button"),
     date_input.min = today;
     date_input.value = today;
     });
+
+   /* Modal Bewerbungen*/
+   
+/*Import elements*/
+   function uploadPDF() {
+    let file_input = document.getElementById("pdf_file"),
+        status = document.getElementById("status");
+
+/* prüft auswahl*/
+        if(file_input.length === 0) {
+            status.innerText = "Datei auswählen";
+            return;
+        }
+/* Object erstellen für den server*/
+        let file = file_input[0];
+        let formData = new FormData();
+        formData.append("pdfFile", file);
+/* sendet object an server*/
+        fetch("upload.php", {
+            method:"POST",
+            body:formData
+        })
+/* antwort von server bearbeiten*/
+        .then(response=> response.text()) //antwort im Text format
+        .then(result => {
+            status.innerText = result; // gibt Text als status
+        })
+        .catch(error => {
+            status.innerText = "Fehler beim uploaden";
+            console.error("Fehler", error);
+        });
+   }
+
+let modal_bewerb_btn = document.querySelector(".button_bewerbung"),
+    modal_bewerb = document.querySelector(".modal_bewerb"),
+    close_bewerb = document.querySelector(".close__bewerb");
+
+    modal_bewerb_btn.addEventListener("click", function(){
+        modal_bewerb.style.display = "block";
+    });
+
+    close_bewerb.addEventListener("click", function(){
+        modal_bewerb.style.display = "none";
+    });
+
 
 
 

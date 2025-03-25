@@ -131,6 +131,10 @@ header{
     all:unset;
 }
 
+.button_bewerbung {
+    all:unset;
+}
+
 
 /*footer*/   
 
@@ -385,27 +389,8 @@ header{
 
 /*modals Termin*/
 
-.modal__termin {
-    display: none;       
-    position: fixed;
-    z-index: 1;        
-    top: 25%;
-    left: 30%;       
-    width:40%;
-    min-height: 60px;
-    box-shadow: 0px 10px 50px 0px #94c11f;    
-    background-color:rgba(253, 253, 253, 0.9);
-
-    .close__termin {            
-        display: flex; 
-        justify-content: end; 
-        padding: 10px 10px 0 0;
-        button{
-            all:unset; 
-            position: absolute;
-        }     
-    } 
-         
+.modal__termin { 
+          
     .modal__footer {
         margin-top: 27px;
         display: flex;
@@ -663,9 +648,8 @@ header{
     position: fixed;
     z-index: 1;        
     top: 25%;
-    left: 15%;       
-    width:70%;
-    min-height: 60px;
+    left: 25%;       
+    width:50%;    
     box-shadow: 0px 10px 50px 0px #94c11f;    
     background-color:rgba(253, 253, 253, 0.9);
 
@@ -681,11 +665,11 @@ header{
 
 }
 
-.modal_download_file {
+.modal_weaper {    
         padding:10px 50px;
         min-height: 600px;
              
-        .download_heder {     
+        .header {     
             box-shadow: 0 10px 6px rgba(148,193,31, 0.1);        
             border-bottom:2px solid #94c11f;          
 
@@ -696,7 +680,9 @@ header{
                 padding: 10px;
             }
 
-        }    
+        } 
+    }
+
 
         .downlod_files {
             width: 70%;
@@ -729,7 +715,60 @@ header{
             }
         }
        
+    
+    /* modal Bewerbung*/    
+    .modal_bewerb {
+       display: none;
+       /*background: url("../imgg/swg_bewerb.jpg")  center/cover no-repeat;*/
+
+       .title_bewerb{
+        text-align: center;
+        padding:50px 10px;
+        font-size: 30px;
+        font-weight: 800;
+        text-transform: uppercase;
+        line-height: 1.2;
+        span{
+            color:#94c11f;
+            text-transform: lowercase;
+            padding-left:10%;
+        }
+
+       }
+
+       .bewerb_upload {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h2 {
+            padding: 10px;
+            font-size: 25px;
+            font-weight: 800;
+            
+        }
+
+        .bewerb_input {            
+            padding: 20px 10px;
+            #pdf_file {
+                color:red;                
+                box-shadow: 0 13px 27px rgba(0,0,0, 0.2);                
+            }
+        }
+
+        button {            
+                font-weight:800;
+                font-size: 20px;                
+                padding: 10px; 
+                box-shadow: 0 13px 27px rgba(0,0,0, 0.2);  
+                border:1px solid #94c11f;  
+        }
+       }
+
     }
+
+    
+    
 
     
 

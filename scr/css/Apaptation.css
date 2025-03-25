@@ -11,15 +11,21 @@
     } 
 
 
-    .modal__termin {
-        left: 20%; 
-        width:60%;
+    .modal__termin {        
 
         .modal__footer {
             h2 {
                 span {
                     justify-content: flex-start;
                 }
+            }
+        }
+    }
+
+    .modal_bewerb {
+        .title_bewerb{        
+            span{
+                padding-left:5%;
             }
         }
     }
@@ -47,6 +53,20 @@
         padding-left: 0;
     }
 }
+
+.modal_bewerb {
+    .title_bewerb{        
+        font-size: 25px;
+    }
+
+    .bewerb_upload {        
+        h2 {
+            font-size: 20px;
+        }
+}
+}
+
+
 }
 
 @media screen and (max-width:1245px){
@@ -108,8 +128,7 @@
 /*modla_termin*/
 
     .modal__termin {
-        top:25px;
-        
+                
         .modal__footer {
             
             h2 {
@@ -129,6 +148,21 @@
         margin-bottom: 10px;
             }
         }
+    }
+
+    
+
+   .modal_weaper {  
+    .header {
+        img {            
+            width: 70%;            
+        }
+    } 
+
+    }
+
+    .modal {
+        top:20%;
     }
 
   
@@ -267,9 +301,7 @@
 
 /*modla_termin*/
 
-.modal__termin {
-    top:25px;
-    
+.modal__termin {       
     .modal__footer {
         .termin__logo {
             display: none;
@@ -281,6 +313,16 @@
 .modal_download {
     width: 80%;
     left:10%;
+}
+
+.modal {
+    top:15%;
+}
+
+.modal_bewerb {
+    .bewerb_upload {
+        margin-top: 25px;
+}
 }
 }
 
@@ -352,6 +394,29 @@ grid-template-columns: repeat(2,1fr);
         }
     }
 
+}
+
+.modal_bewerb {
+    .bewerb_upload {
+        margin-top: 10px;
+
+        h2 {
+            font-size: 17px;
+        }
+}
+
+.title_bewerb{
+    font-size: 20px;
+    padding:20px 10px;
+}
+}
+
+.modal_weaper {  
+    .header {
+        img {            
+            width: 100%;            
+        }
+    } 
 }
 }
 

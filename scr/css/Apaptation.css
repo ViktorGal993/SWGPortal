@@ -148,9 +148,7 @@
         margin-bottom: 10px;
             }
         }
-    }
-
-    
+    }   
 
    .modal_weaper {  
     .header {
@@ -158,15 +156,11 @@
             width: 70%;            
         }
     } 
-
     }
 
     .modal {
         top:20%;
     }
-
-  
-   
 }
 
 @media screen and (max-width:835px){
@@ -324,6 +318,13 @@
         margin-top: 25px;
 }
 }
+
+.map_small {
+    display: none;
+}
+.map_big {
+    display: block;
+}
 }
 
 @media screen and (max-width:580px){
@@ -335,6 +336,9 @@
     }
     .header-nav{  
         font-size: 9px;     
+    }
+    .cover {
+        display: none;
     }
 
     /*section 2 Kontent*/
@@ -492,7 +496,9 @@ grid-template-columns: repeat(2,1fr);
                     font-size: 16px;
                 }                  
        }   
-    }    
+    }
+    
+   
 }
 
 @media screen and (max-width:580px){

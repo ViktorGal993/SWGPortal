@@ -142,7 +142,8 @@ header{
     color:white;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;        
+    justify-content: space-between;
+    align-items:center;        
     text-transform: uppercase;
     font-weight: 900;       
     padding:30px 100px;
@@ -161,6 +162,7 @@ header{
 }
 
 .adress{
+    
     address{
         display: flex;
         padding: 10px 0;
@@ -687,7 +689,7 @@ header{
         .downlod_files {
             width: 70%;
             display: block;
-            margin: 0 auto;
+            margin: 20px auto;
             min-height: 60px;
             border-bottom:2px solid #abaca8;
             padding: 10px;

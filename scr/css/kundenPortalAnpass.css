@@ -1,0 +1,202 @@
+/*835px*/
+
+.kunden_portal {
+    width: 60vh;
+    padding: 10px; 
+
+    .fiks_kontent {        
+        width: 200px;
+
+        .fix_foto {
+            margin: 15px auto;
+            width: 110px;
+            height: 110px;
+
+            button {
+                font-size: 10px;
+                margin: 30% auto;            
+               } 
+        }
+
+        .person_daten {
+            margin-top: 30px;  
+            padding:10px;                    
+            input {
+                width: 100px;
+                min-height: 30px;                  
+                font-size: 10px;                                       
+            }
+
+            h2 {
+                font-size: 17px;
+            }
+        }
+    }
+
+    .kunden_portal_info {
+        width: 500px;
+        padding:5px; 
+        margin: 10px 10px 0 0;           
+        img {               
+            padding:5px 10px 5px 5px;
+            width: 230px;                          
+        } 
+
+        .kp_user_input {                   
+            input {                   
+                font-size: 20px; 
+                }          
+        }
+    } 
+
+    .kp_users_tickets {
+        h2 {
+            font-size: 17px;
+        }
+
+        input {                             
+                min-height: 70px;                   
+                font-size: 15px;                      
+        }
+    }             
+}  
+/*Ende KundenPortal*/
+
+/*CSS Beschreibung*/
+.kunden_portal {
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    margin:20px;    
+    display:none;
+    justify-content: space-around;    
+    z-index: 1;
+    padding: 30px;    
+    width: 130vh;
+    background-color:rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 10px 50px 0px #94c11f; 
+    .close__portal {            
+        display: flex; 
+        justify-content: end;         
+        button{
+            all:unset; 
+            position: absolute;
+        }
+    } 
+
+    .fiks_kontent {        
+         width: 300px;
+         background-color:#fffefe;
+         box-shadow: 0 10px 6px rgba(12, 12, 12, 0.1);  
+         height: 600px;
+
+         .fix_foto {
+           margin: 30px auto;
+           width: 150px;
+           height: 150px;
+           border:1px solid #fff;
+           border-radius:50%;
+           background-color:#e6dddd;
+           box-shadow: 0 10px 6px rgba(12, 12, 12, 0.1);
+           button {
+            display: block;
+            margin: 35% auto;            
+           } 
+        }
+
+         .person_daten {
+            margin-top: 50px;
+            text-align: left;
+            padding:10px 0 20px 20px;            
+
+            input {
+                width: 200px;
+                min-height: 35px;
+                border-radius: 5px;
+                border:none;
+                box-shadow: 15px 10px 6px rgba(12, 12, 12, 0.1);  
+                font-size: 14px;  
+                padding:10px; 
+                margin-bottom: 25px;
+            }
+        }
+    }
+
+    .kunden_portal_info {
+        width: 800px;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+     
+        .kp_info_heder {
+            box-shadow: 0 10px 6px rgba(148,193,31, 0.1);        
+            border-bottom:2px solid #94c11f;
+
+        }
+        img {
+            width: 500px;
+            padding: 10px;
+        }
+
+        .kp_user_input {
+            margin-top: 30px;
+            text-align: left;
+            width: 100%;
+
+            input {
+                text-align: center;
+                width: 100%;
+                min-height: 100px;
+                border-radius: 5px;
+                border:none;
+                box-shadow: 15px 10px 6px rgba(12, 12, 12, 0.1);  
+                font-size: 25px;  
+                padding:10px; 
+            }            
+        }
+        .kp_user_id {
+            width: 100%;
+            text-align: left;
+
+            input {
+                width: 100%;
+                min-height: 35px;
+                border-radius: 5px;
+                border: 1px solid #d6d6d6c7;
+                box-shadow: 15px 10px 6px rgba(12, 12, 12, 0.1);  
+                font-size: 14px;  
+                padding:10px; 
+                margin-top: 25px;
+            }
+
+        }
+    }
+
+    .kp_users_tickets {
+        width: 100%;
+        margin-top: 30px;
+
+        h2 {
+            text-align: left;
+            padding:10px 0;            
+        }
+
+        input { 
+            margin-bottom: 10px;               
+                width: 100%;
+                min-height: 100px;
+                border-radius: 5px;
+                border: 1px solid #d6d6d6c7;
+                box-shadow: 15px 10px 6px rgba(12, 12, 12, 0.1);  
+                font-size: 25px;  
+                padding:10px ; 
+        }
+
+    }
+}
+
+
+
+/*End modals Kunden Portal*/

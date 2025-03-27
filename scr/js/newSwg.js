@@ -97,7 +97,7 @@ let support = document.querySelector(".support__button"),
      /*Frage einrichten */
      let frage = document.querySelector(".frage");     
     frage.addEventListener("click", function(){
-        termin_modal.style.display = "block";
+        support_modal.style.display = "block";
     });
 
     /*downlod Modal einrichten*/
@@ -169,8 +169,3 @@ let modal_bewerb_btn = document.querySelector(".button_bewerbung"),
     close_bewerb.addEventListener("click", function(){
         modal_bewerb.style.display = "none";
     });
-
-
-
-
-

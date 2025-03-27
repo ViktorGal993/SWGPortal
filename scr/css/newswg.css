@@ -291,14 +291,13 @@ header{
         img {
             display: block;
             margin: 0 auto;
-            width: 50%;
+            width: 600px;
             padding: 10px;
         }
 
      } 
 }
 
-/* ab hier weiter bearbeten*/
 .modal__header {
     margin-top: 27px;
     display: flex;
@@ -396,16 +395,11 @@ header{
     }     
 
 }
-/* ab hier weiter bearbeten*/
+
 /*modals Termin*/
 
-.modal__termin { 
-          
-    .modal__header {       
-       
-    }
-
-    .inpuut__contact {
+.modal__termin {         
+       .inpuut__contact {
         display: flex;
         align-items:end;
         flex-wrap: wrap;        
@@ -424,7 +418,7 @@ header{
         label {
             display: block;
             font-size: 21px;
-            font-weight: 700;
+            font-weight: 800;
         }
         }
 
@@ -462,10 +456,13 @@ header{
         margin: 30px 0 50px 0;
         display: flex;
         justify-content: flex-start;
+        flex-wrap: wrap;
         .termin__datum {
             label {
+                margin:10px 0;
                 display: block;
                 margin-bottom: 10px;
+                font-weight: 800;
             }
             input {
                 width: 170px;                
@@ -488,187 +485,46 @@ header{
 
 /*modals Kunden Portal*/
 
-.kunden_portal {
-    position: fixed;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
-    margin:20px;    
-    display:none;
-    justify-content: space-around;    
-    z-index: 1;
-    padding: 30px;    
-    width: 130vh;
-    background-color:rgba(255, 255, 255, 0.9);
-    box-shadow: 0px 10px 50px 0px #94c11f; 
-    .close__portal {            
-        display: flex; 
-        justify-content: end;         
-        button{
-            all:unset; 
-            position: absolute;
-        }
-    } 
+/* Modals Download*/
+.downlod_files {
+    width: 70%;
+    display: block;
+    margin: 20px auto;
+    min-height: 60px;
+    border-bottom:2px solid #abaca8;
+    padding: 10px;
 
-    .fiks_kontent {        
-         width: 300px;
-         background-color:#fffefe;
-         box-shadow: 0 10px 6px rgba(12, 12, 12, 0.1);  
-         height: 600px;
-
-         .fix_foto {
-           margin: 30px auto;
-           width: 150px;
-           height: 150px;
-           border:1px solid #fff;
-           border-radius:50%;
-           background-color:#e6dddd;
-           box-shadow: 0 10px 6px rgba(12, 12, 12, 0.1);
-           button {
-            display: block;
-            margin: 35% auto;            
-           } 
-        }
-
-         .person_daten {
-            margin-top: 50px;
-            text-align: left;
-            padding:10px 0 20px 20px;            
-
-            input {
-                width: 200px;
-                min-height: 35px;
-                border-radius: 5px;
-                border:none;
-                box-shadow: 15px 10px 6px rgba(12, 12, 12, 0.1);  
-                font-size: 14px;  
-                padding:10px; 
-                margin-bottom: 25px;
-            }
-        }
-    }
-
-    .kunden_portal_info {
-        width: 800px;
-        padding: 0 20px;
+    .download_content {
         display: flex;
-        flex-direction: column;
+        justify-content: space-between;
+        flex-wrap: wrap;
         align-items: center;
-     
-        .kp_info_heder {
-            box-shadow: 0 10px 6px rgba(148,193,31, 0.1);        
-            border-bottom:2px solid #94c11f;
-
-        }
-        img {
-            width: 500px;
-            padding: 10px;
-        }
-
-        .kp_user_input {
-            margin-top: 30px;
-            text-align: left;
-            width: 100%;
-
-            input {
-                text-align: center;
-                width: 100%;
-                min-height: 100px;
-                border-radius: 5px;
-                border:none;
-                box-shadow: 15px 10px 6px rgba(12, 12, 12, 0.1);  
-                font-size: 25px;  
-                padding:10px; 
-            }            
-        }
-        .kp_user_id {
-            width: 100%;
-            text-align: left;
-
-            input {
-                width: 100%;
-                min-height: 35px;
-                border-radius: 5px;
-                border: 1px solid #d6d6d6c7;
-                box-shadow: 15px 10px 6px rgba(12, 12, 12, 0.1);  
-                font-size: 14px;  
-                padding:10px; 
-                margin-top: 25px;
-            }
-
-        }
+        margin: 0 10px;
     }
-
-    .kp_users_tickets {
-        width: 100%;
-        margin-top: 30px;
-
-        h2 {
-            text-align: left;
-            padding:10px 0;            
-        }
-
-        input { 
-            margin-bottom: 10px;               
-                width: 100%;
-                min-height: 100px;
-                border-radius: 5px;
-                border: 1px solid #d6d6d6c7;
-                box-shadow: 15px 10px 6px rgba(12, 12, 12, 0.1);  
-                font-size: 25px;  
-                padding:10px ; 
-        }
-
+            
+    a {
+        font-size: 20px;
+        font-weight:800;                                   
+    }
+    
+    button {
+        font-weight:800;
+        font-size: 20px;                
+        padding: 10px; 
+        box-shadow: 0 13px 27px rgba(0,0,0, 0.2);  
+        border:1px solid #94c11f;      
+                              
     }
 }
-
-
-
-/*End modals Kunden Portal*/
-
-/* Modals Download*/
-
-
-
-
-        .downlod_files {
-            width: 70%;
-            display: block;
-            margin: 20px auto;
-            min-height: 60px;
-            border-bottom:2px solid #abaca8;
-            padding: 10px;
-
-            .download_content {
-                display: flex;
-                justify-content: space-between;
-                flex-wrap: wrap;
-                align-items: center;
-                margin: 0 10px;
-            }
-            
-            a {
-                font-size: 20px;
-                font-weight:800;                             
-                
-            }
-            button {
-                font-weight:800;
-                font-size: 20px;                
-                padding: 10px; 
-                box-shadow: 0 13px 27px rgba(0,0,0, 0.2);  
-                border:1px solid #94c11f;      
-                              
-            }
-        }
        
     
-    /* modal Bewerbung*/    
-    .modal_bewerb {
-       display: none;
-       /*background: url("../imgg/swg_bewerb.jpg")  center/cover no-repeat;*/
+/* modal Bewerbung*/    
 
-       .title_bewerb{
+.modal_bewerb {
+    display: none;
+    /*background: url("../imgg/swg_bewerb.jpg")  center/cover no-repeat;*/
+
+    .title_bewerb{
         text-align: center;
         padding:50px 10px;
         font-size: 30px;
@@ -681,9 +537,9 @@ header{
             padding-left:10%;
         }
 
-       }
+    }
 
-       .bewerb_upload {
+    .bewerb_upload {
         margin-top: 40px;
         display: flex;
         flex-direction: column;
@@ -710,9 +566,9 @@ header{
                 box-shadow: 0 13px 27px rgba(0,0,0, 0.2);  
                 border:1px solid #94c11f;  
         }
-       }
-
     }
+
+}
     /*Roteplan/ Karte einrichtung*/
     .map_small {
         margin: 0 20px;  
@@ -722,19 +578,3 @@ header{
     .map_big {
         display: none;
     }
-
-    
-    
-
-    
-
-
-
-
-
-
-
-
-
-
-  

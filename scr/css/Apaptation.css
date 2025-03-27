@@ -10,18 +10,6 @@
         font-size: 16px; 
     } 
 
-
-    .modal__termin {        
-
-        .modal__footer {
-            h2 {
-                span {
-                    justify-content: flex-start;
-                }
-            }
-        }
-    }
-
     .modal_bewerb {
         .title_bewerb{        
             span{
@@ -33,38 +21,9 @@
 
 /*Support window*/
 @media screen and (max-width:1550px){
-    .modal__support {                      
-        left: 25%;       
-        width:50%; 
-}
-
-.modal_download_file {
-    .download_heder {
-        img {
-            width: 70%;
-        }
+    .modal {
+        top:12%;
     }
-
-}
-
-.downlod_files {
-    button {
-        margin: 10px;
-        padding-left: 0;
-    }
-}
-
-.modal_bewerb {
-    .title_bewerb{        
-        font-size: 25px;
-    }
-
-    .bewerb_upload {        
-        h2 {
-            font-size: 20px;
-        }
-}
-}
 
 
 }
@@ -120,46 +79,48 @@
             margin-right: 7px;          
         }                
     }
-
-/*kunden Portal*/
-    .kunden_portal {
-        width: 90vh;
-    }
 /*modla_termin*/
-
-    .modal__termin {
-                
-        .modal__footer {
-            
-            h2 {
-                font-size: 18px;
-                span {
-                    font-size: 25px;
-                    font-weight: 800;
-                }
-            }
-        }
-
-        .termin_date_zeit {
-            flex-wrap: wrap;
-            justify-content: center;
-
-           .termin__datum {
-        margin-bottom: 10px;
-            }
-        }
-    }   
 
    .modal_weaper {  
     .header {
         img {            
-            width: 70%;            
+            width: 500px;            
         }
     } 
     }
 
     .modal {
-        top:20%;
+        width: 70%;
+        left:15%;
+    }
+
+    /*modal Download font*/
+    .downlod_files {
+        
+        a {
+            font-size: 17px;
+        }
+        button {
+            font-size: 17px;
+        }
+
+    }
+
+    /*modal Bewerbung font*/
+    .modal_bewerb {
+        .title_bewerb{
+            font-size: 22px;
+        }
+
+        .bewerb_upload {
+            margin-top: 0;
+            h2 {
+                font-size: 17px; 
+            }
+            button {
+                font-size: 17px;
+            }
+        }
     }
 }
 
@@ -229,94 +190,12 @@
     font-size: 5px;
 }
 
-/*KundenPortal*/
-
-.kunden_portal {
-    width: 60vh;
-    padding: 10px; 
-
-    .fiks_kontent {        
-        width: 200px;
-
-        .fix_foto {
-            margin: 15px auto;
-            width: 110px;
-            height: 110px;
-
-            button {
-                font-size: 10px;
-                margin: 30% auto;            
-               } 
-        }
-
-        .person_daten {
-            margin-top: 30px;  
-            padding:10px;                    
-            input {
-                width: 100px;
-                min-height: 30px;                  
-                font-size: 10px;                                       
-            }
-
-            h2 {
-                font-size: 17px;
-            }
-        }
-    }
-
-    .kunden_portal_info {
-        width: 500px;
-        padding:5px; 
-        margin: 10px 10px 0 0;           
-        img {               
-            padding:5px 10px 5px 5px;
-            width: 230px;                          
-        } 
-
-        .kp_user_input {                   
-            input {                   
-                font-size: 20px; 
-                }          
-        }
-    } 
-
-    .kp_users_tickets {
-        h2 {
-            font-size: 17px;
-        }
-
-        input {                             
-                min-height: 70px;                   
-                font-size: 15px;                      
-        }
-    }             
-}  
-/*Ende KundenPortal*/
-
-/*modla_termin*/
-
-.modal__termin {       
-    .modal__footer {
-        .termin__logo {
-            display: none;
-        }
-}
-}
 
 /*modal Download*/
-.modal_download {
-    width: 80%;
-    left:10%;
-}
+
 
 .modal {
-    top:15%;
-}
-
-.modal_bewerb {
-    .bewerb_upload {
-        margin-top: 25px;
-}
+    top:8%;
 }
 
 .map_small {
@@ -342,86 +221,44 @@
     }
 
     /*section 2 Kontent*/
- .title{           
-    font-size: 25px;
-    span{            
-        font-size: 35px;             
-    }
-}
-.grid_content{
-grid-template-columns: repeat(2,1fr);
- }
-
- /*Kunden Portal*/
- .kunden_portal {
-    width: 100%;
-    margin:10px;
-}
-
-.close__portal {
-    margin-right: 10px;
-    button {
-        img {
-            width: 38px;
+    .title{           
+        font-size: 25px;
+        span{            
+            font-size: 35px;             
         }
     }
-}
+    .grid_content{
+    grid-template-columns: repeat(2,1fr);
+    }
 
-/*Ende Kunden Portal*/
-.modal__termin {
-    left: 10%; 
-    width:80%;
-    .modal__footer {
+    /*Title im Modalsheader mit Logo anpassen*/
+
+    .modal__header {
+        
         h2 {
-            font-size: 15px;
+            font-size: 17px;
             span {
-                font-size: 20px;
-            }
+            font-size: 20px;            
+            }            
         }
     }
-}
+
+    /*die Breite von Modals Fenster anpassen*/
+    .modal {
+        top:5%;
+        width: 80%;
+        left:11%;
+    }
 
 /*modal Download*/
 
-.modal_download_file {
-    .download_heder {
-        img {
-            width: 90%;
-        }
+    .modal_weaper {  
+        .header {
+            img {            
+                width: 100%;            
+            }
+        } 
     }
-
-    .downlod_files {
-        padding: 0;
-        margin: 0;
-        .download_content {
-            margin: 0;
-        }
-    }
-
-}
-
-.modal_bewerb {
-    .bewerb_upload {
-        margin-top: 10px;
-
-        h2 {
-            font-size: 17px;
-        }
-}
-
-.title_bewerb{
-    font-size: 20px;
-    padding:20px 10px;
-}
-}
-
-.modal_weaper {  
-    .header {
-        img {            
-            width: 100%;            
-        }
-    } 
-}
 }
 
 @media screen and (max-width:424px){
@@ -459,53 +296,25 @@ grid-template-columns: repeat(2,1fr);
         }
     }
 
+    .modal {
+        top:5%;
+        width: 90%;
+        left:6%;
+    }
+
     
 }
 
 
-
-
-
-
-
-
-
-
 @media screen and (max-width:1245px){
-.modal__support {
-     .modal__footer {
-        h2{
-            font-size: 16px;
-        }                   
-     }
-    }
 }
 
 @media screen and (max-width:975px){
-    .modal__support {  
-        top:25px;       
-                              
-        .inpuut__contact {           
-            justify-content: center;        
-            .input__input {
-                width: 220px;                
-            }                    
-        }
-        .input__title {
-                h2 {
-                    font-size: 16px;
-                }                  
-       }   
-    }
+   
     
    
 }
 
 @media screen and (max-width:580px){
-    .modal__support { 
-                            
-        left: 10%; 
-        width:80%;      
-        
-      }
+    
 }

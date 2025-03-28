@@ -19,6 +19,10 @@ ul {
 img {
    max-width:100%;
 }
+button {
+    all:unset;
+}
+
 /* Reset end */
 
 .hover_green{
@@ -39,8 +43,9 @@ img {
 
 header{
     display: flex;
-    justify-content:space-between;   
-    border-bottom: 3px solid #94c11f;
+    justify-content:space-between; 
+    align-items: center;  
+    border-bottom: 3px solid #94c11f;   
     box-shadow: 0 10px 20px rgba(0,0,0, 0.2);
 }
 
@@ -52,10 +57,61 @@ header{
     max-width: 650px;   
 }
 
+.menu_toggle {
+    display: none;
+    font-family: 30px;
+    cursor: pointer;
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right:50px;
+    background-color:rgba(253, 253, 253, 0.9);
+    min-width: 250px;
+    z-index: 1; 
+    font-weight: 800;
+    text-transform: uppercase;
+   
+
+    ul {
+        text-align: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            border-bottom: 1px solid #94c11f;
+            a {
+                display: block;
+                padding: 10px;
+                text-decoration: none;
+                color: black;
+            }           
+            button {
+                display: block;
+                padding: 10px;
+                text-decoration: none;
+                color: black;
+                margin: 0 auto;
+            }
+            
+
+        }
+    }
+}
+
+/* menu animation*/
+.menu.show {
+    display: block;
+
+}
+
 .header-nav{
     display: flex;    
-    font-size: 20px;    
-    font-weight: 700;
+    font-size: 19px;    
+    font-weight: 800;
     a{
         padding: 0 10px;   
     } 
@@ -109,30 +165,6 @@ header{
         font-size: 30px;
         color:#94c11f;
     }    
-}
-
-/* Portals Buttons dekaration ausschalten*/
-
-.portal__button  {  
-    all:unset;    
-}
-
-
-/*SUport Function*/
-.support__button {
-    all:unset;
-}
-
-.fern__button{
-    all:unset;
-}
-
-.button_download {
-    all:unset;
-}
-
-.button_bewerbung {
-    all:unset;
 }
 
 /*footer*/   

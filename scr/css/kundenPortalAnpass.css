@@ -197,6 +197,65 @@
     }
 }
 
+/*Kunden Portal HTML*/
+/*
+<!--modals Kunden Portal-->
+
+
+<div class="kunden_portal">    
+
+    <aside class="fiks_kontent">
+        <div class="fix_foto animat">            
+            <img src="#" alt="">
+            
+            <button>Foto hinzufügen</button>
+        </div>
+        <div class="person_daten animat">
+            <h2>Name</h2>
+            <input type="text" placeholder="Ihre Name">
+
+            <h2>E-mail</h2>
+            <input type="text" placeholder="Ihre E-Mail">
+
+            <h2>Phone</h2>
+            <input type="text" placeholder="Ihre Telefonnummer">
+        </div>    
+       
+    </aside>
+
+    <div class="kunden_portal_info">
+
+        <div class="kp_info_heder">
+            <img src="scr/imgg/SWG_LOGO2.png" alt="logo2">
+        </div>
+
+        <div class="kp_user_input">
+            <input type="text" name="" id="userWelcom" placeholder="Welcom! euser name... ">
+        </div>
+
+        <div class="kp_user_id animat">
+            <input type="text" id="userId" placeholder="Ihre ID...">
+        </div>
+
+        <div class="kp_users_tickets">
+            <h2>Ihr - Tickets</h2>
+            <input class="animat" type="text"  id="ticket1" >
+            <input class="animat" type="text"  id="ticket2" >
+            <input class="animat" type="text"  id="ticket3" >            
+
+        </div>
+        
+    </div>
+
+    <div class="close__portal">
+        <button class="animat"><img src="scr/iconss/close.svg" alt=""></button>   
+    </div> 
+
+</div>
+-->
+<!--Ende modals Kunden Portal-->
+*/
+
 
 
 /*End modals Kunden Portal*/

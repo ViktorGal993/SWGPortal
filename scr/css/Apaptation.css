@@ -192,6 +192,12 @@
 
 
 /*modal Download*/
+.downlod_files {            
+    .download_content {
+        margin: 0;
+        justify-content: center;
+    }
+}
 
 
 .modal {
@@ -211,13 +217,24 @@
         padding: 10px 20px;   
     }
     .logo{        
-        max-width: 185px;        
+        max-width: 300px;        
+    }
+    #header {
+        justify-content: space-around;
     }
     .header-nav{  
         font-size: 9px;     
     }
     .cover {
         display: none;
+    }
+
+    /* navigation in header wechseln*/
+    .header-nav {
+        display: none;
+    }
+    .menu_toggle {
+        display: block;
     }
 
     /*section 2 Kontent*/
@@ -252,12 +269,15 @@
 
 /*modal Download*/
 
-    .modal_weaper {  
+    .modal_weaper { 
+        padding:10px 20px;
         .header {
             img {            
                 width: 100%;            
             }
         } 
+
+     
     }
 }
 
@@ -272,7 +292,7 @@
         }     
     }
     .logo{        
-        max-width: 175px;        
+        max-width: 250px;        
     }
     .cover{
         height: 250px;
@@ -300,6 +320,22 @@
         top:5%;
         width: 90%;
         left:6%;
+    }
+
+    .modal_bewerb {
+        .title_bewerb{
+            font-size: 19px;
+        }
+
+        .bewerb_upload {
+            margin-top: 0;
+            h2 {
+                font-size: 15px; 
+            }
+            button {
+                font-size: 15px;
+            }
+        }
     }
 
     

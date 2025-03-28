@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SWGPortal</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -19,13 +19,34 @@
     <img src="scr/imgg/SWG_LOGO2.png" alt="logo2"> 
 </a>   
 </div>
+
+<div class="menu_toggle animat2" id="menu_toggle">
+    <button class="menu_swg" id="menu_swg" >
+        <img src="scr/iconss/menu.png" alt="menu">
+    </button>  
+</div>
+
+<nav class="menu animat2" id="menu">
+    <ul>
+        <li class="animat hover_green"><a href="https://swg-datensysteme.de/kontakt/">kontakt</a></li>
+        <li class="animat hover_green"><button class="termin hover_green">Termin</button></li>
+        <li class="animat hover_green"><button class="frage hover_green" >Frage</button></li>
+        <li class="animat hover_green"><a href="https://swg-datensysteme.de/ueber-uns/">Über Uns</a></li>
+    </ul>
+</nav>
+
    <!--<img src="iconss/SWG_small.png" alt="" id="rotatingImage"> -->
 <nav class="header-nav hover_green center_uppercase animat">
     <a href="https://swg-datensysteme.de/kontakt/">kontakt</a>
     <button class="termin hover_green">Termin</button>
     <button class="frage hover_green" >Frage</button>
     <a href="https://swg-datensysteme.de/ueber-uns/">Über Uns</a>    
-    </nav>
+</nav>
+
+
+
+
+
 </header>
 
 <main>
@@ -346,63 +367,6 @@
 
 <!--Ende des Modals Download-->
 
-<!--modals Kunden Portal-->
-<!--
-
-<div class="kunden_portal">    
-
-    <aside class="fiks_kontent">
-        <div class="fix_foto animat">            
-            <img src="#" alt="">
-            
-            <button>Foto hinzufügen</button>
-        </div>
-        <div class="person_daten animat">
-            <h2>Name</h2>
-            <input type="text" placeholder="Ihre Name">
-
-            <h2>E-mail</h2>
-            <input type="text" placeholder="Ihre E-Mail">
-
-            <h2>Phone</h2>
-            <input type="text" placeholder="Ihre Telefonnummer">
-        </div>    
-       
-    </aside>
-
-    <div class="kunden_portal_info">
-
-        <div class="kp_info_heder">
-            <img src="scr/imgg/SWG_LOGO2.png" alt="logo2">
-        </div>
-
-        <div class="kp_user_input">
-            <input type="text" name="" id="userWelcom" placeholder="Welcom! euser name... ">
-        </div>
-
-        <div class="kp_user_id animat">
-            <input type="text" id="userId" placeholder="Ihre ID...">
-        </div>
-
-        <div class="kp_users_tickets">
-            <h2>Ihr - Tickets</h2>
-            <input class="animat" type="text"  id="ticket1" >
-            <input class="animat" type="text"  id="ticket2" >
-            <input class="animat" type="text"  id="ticket3" >            
-
-        </div>
-        
-    </div>
-
-    <div class="close__portal">
-        <button class="animat"><img src="scr/iconss/close.svg" alt=""></button>   
-    </div> 
-
-</div>
--->
-<!--Ende modals Kunden Portal-->
-
-
 <!-- Modal Bewerbungen-->
 <div class="modal modal_bewerb">
 
@@ -433,6 +397,8 @@
     </div> 
 </div>
 <!--Ende des Modals Bewerbungen-->
+
+
 
   
 </main>

@@ -169,3 +169,21 @@ let modal_bewerb_btn = document.querySelector(".button_bewerbung"),
     close_bewerb.addEventListener("click", function(){
         modal_bewerb.style.display = "none";
     });
+
+    /*mobil Nav Einrichtung*/
+
+    document.addEventListener("DOMContentLoaded", function() {        // um die Seite voll geladen
+        const menu_Toggle = document.getElementById("menu_toggle"),
+            menu = document.getElementById("menu");
+        
+
+        menu_Toggle.addEventListener("click", function(){
+
+           menu.classList.toggle("show");
+        });     
+
+
+
+
+
+    });

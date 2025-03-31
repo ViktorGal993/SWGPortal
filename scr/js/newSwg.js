@@ -54,12 +54,16 @@ let support = document.querySelector(".support__button"),
     close_support = document.querySelector(".close__support");
 
     support.addEventListener("click", function(){
-        support_modal.style.display = "block";
+        support_modal.style.display = "block";        
+        termin_modal.style.display = "none";
+        modal_download.style.display = "none";
+        modal_bewerb.style.display = "none";        
     });
 
     close_support.addEventListener("click", function(){
         support_modal.style.display = "none";
     });
+
 
     /*Kunden Portal window einrichten*/
  /*
@@ -77,8 +81,7 @@ let support = document.querySelector(".support__button"),
 
 */
 
-
-    /* Termin Kalender einrichten (Terminplanung)*/
+/* Termin Kalender einrichten (Terminplanung)*/
     let termin = document.querySelectorAll(".termin").forEach(btn =>{
         btn.addEventListener('click',()=> 
             termin_modal.style.display = "block")
@@ -95,10 +98,20 @@ let support = document.querySelector(".support__button"),
     });
 
      /*Frage einrichten */
-     let frage = document.querySelector(".frage");     
+     let frage = document.querySelectorAll(".frage");
+     
+     for(let i=0;i<frage.length;i++){
+
+        frage[i].addEventListener("click",function(){
+            support_modal.style.display = "block";
+        });
+    }
+/*
     frage.addEventListener("click", function(){
         support_modal.style.display = "block";
-    });
+        });
+*/
+    
 
     /*downlod Modal einrichten*/
     let modal_download_btn = document.querySelector(".button_download"),
@@ -180,10 +193,9 @@ let modal_bewerb_btn = document.querySelector(".button_bewerbung"),
         menu_Toggle.addEventListener("click", function(){
 
            menu.classList.toggle("show");
-        });     
-
-
-
-
+       }); 
 
     });
+
+    // Regel wen ein Fenster schon offen, alle andere sind zu
+    

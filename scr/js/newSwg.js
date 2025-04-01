@@ -82,22 +82,37 @@ let support = document.querySelector(".support__button"),
 */
 
 /* Termin Kalender einrichten (Terminplanung)*/
+/*
     let termin = document.querySelectorAll(".termin").forEach(btn =>{
         btn.addEventListener('click',()=> 
-            termin_modal.style.display = "block")
-    }),
+            termin_modal.style.display = "block",         
+            support_modal.style.display = "none")
+    }),    
     termin_modal = document.querySelector(".modal__termin"),
-    close_termin = document.querySelector(".close__termin");
-/*
-    termin.addEventListener("click", function(){
-        termin_modal.style.display = "block";
-    });
-*/
+    close_termin = document.querySelector(".close__termin");    
+
+
     close_termin.addEventListener("click", function(){
         termin_modal.style.display = "none";
     });
+*/
+let termin = document.querySelectorAll(".termin"),
+termin_modal = document.querySelector(".modal__termin"),
+close_termin = document.querySelector(".close__termin");
 
-     /*Frage einrichten */
+for(let i =0;i< termin.length; i++) {
+    termin[i].addEventListener("click", function() {
+        termin_modal.style.display = "block";
+        support_modal.style.display = "none";  
+        modal_download.style.display = "none";
+        modal_bewerb.style.display = "none";
+    });
+}
+close_termin.addEventListener("click", function(){
+    termin_modal.style.display = "none";
+});
+
+     /*Frage einrichten  (2ein für laptop version, ein für mobil) */
      let frage = document.querySelectorAll(".frage");
      
      for(let i=0;i<frage.length;i++){
@@ -105,13 +120,7 @@ let support = document.querySelector(".support__button"),
         frage[i].addEventListener("click",function(){
             support_modal.style.display = "block";
         });
-    }
-/*
-    frage.addEventListener("click", function(){
-        support_modal.style.display = "block";
-        });
-*/
-    
+    }    
 
     /*downlod Modal einrichten*/
     let modal_download_btn = document.querySelector(".button_download"),
@@ -120,13 +129,14 @@ let support = document.querySelector(".support__button"),
 
         modal_download_btn.addEventListener("click", function(){
             modal_download.style.display = "block";
+            support_modal.style.display = "none";  
+            termin_modal.style.display = "none";            
+            modal_bewerb.style.display = "none";
         });
 
         close_download.addEventListener("click", function(){
             modal_download.style.display = "none";
-        });
-
-    
+        });    
 
     /*die heutige Datum erhalten*/
     document.addEventListener("DOMContentLoaded", function(){
@@ -177,7 +187,10 @@ let modal_bewerb_btn = document.querySelector(".button_bewerbung"),
 
     modal_bewerb_btn.addEventListener("click", function(){
         modal_bewerb.style.display = "block";
-    });
+        support_modal.style.display = "none";
+        termin_modal.style.display = "none";
+        modal_download.style.display = "none";
+        });
 
     close_bewerb.addEventListener("click", function(){
         modal_bewerb.style.display = "none";
@@ -193,9 +206,14 @@ let modal_bewerb_btn = document.querySelector(".button_bewerbung"),
         menu_Toggle.addEventListener("click", function(){
 
            menu.classList.toggle("show");
+           modal_bewerb.style.display = "none";
+        support_modal.style.display = "none";
+        termin_modal.style.display = "none";
+        modal_download.style.display = "none";
        }); 
 
     });
 
-    // Regel wen ein Fenster schon offen, alle andere sind zu
+    
+    
     

@@ -140,7 +140,7 @@
          padding: 0 5px;   
      }  
  } 
-
+ 
  .cover{
     height: 350px;
  }
@@ -262,7 +262,7 @@
 
     /*die Breite von Modals Fenster anpassen*/
     .modal {
-        top:5%;
+        top:3%;
         width: 80%;
         left:11%;
     }
@@ -337,20 +337,5 @@
             }
         }
     }
-
-    
-}
-
-
-@media screen and (max-width:1245px){
-}
-
-@media screen and (max-width:975px){
-   
-    
-   
-}
-
-@media screen and (max-width:580px){
     
 }

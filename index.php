@@ -69,10 +69,8 @@
                         <h3>Support</h3>
                     </div>                 
                 </div>
-              </button>                
-
-                <div class="kontakt animat">
-                    
+              </button>              
+                <div class="kontakt animat">                    
                     <div class="course-item ">
                         <!--Kontakt Funktionen-->
                         <div class="kontakt_funktion">
@@ -80,18 +78,13 @@
                              <li class="anruf kontakt_link hover_green animat2"><a href="tel:+49851958080">Jetzt Anrufen</a></li>
                              <li class="termin kontakt_link hover_green animat2" ><button class="termin" href="#">termin buchen</button></li>
                              <li class="zuruckruf kontakt_link hover_green animat2"><a href="#">Rückruf anfordern</a></li>
-                            </ul>
-                                               
+                            </ul>                                               
                       </div>
-
                         <img src="scr/imgg/menu/kontakt.jpg" alt="kontakt">
-                        <h3 >Kontakt</h3>
-                    
+                        <h3 >Kontakt</h3>                    
                     </div>                    
                 </div>
-
-                <a class="fern__button animat" href="scr/app/pcvisit_Support_Kunden_Modul.exe" >
-                    
+                <a class="fern__button animat" href="scr/app/pcvisit_Support_Kunden_Modul.exe" >                    
                     <div class="fern">
                         <div class="course-item">
                             <img src="scr/imgg/menu/fernwar.jpg" alt="Fernwartung">
@@ -99,7 +92,6 @@
                         </div>
                     </div>
                 </a>
-
                 <button class="button_download">
                     <div class="download animat">
                         <div class="course-item">
@@ -222,45 +214,41 @@
     
     <div class="modal_weaper">
 
-        <form action="send.php" method="post" class="input" >            
+        <form id="massage_suport" action="save_user.php" method="post" class="input" >            
             
             <div class="inpuut__contact">
 
                 <div class="input__name animat">
                         
                     <label for="name">Name:</label>
-                    <input name="name" id="name"placeholder="Name..." type="text" class="input__input" required>
+                    <input name="name_support" id="name"placeholder="Name..." type="text" class="input__input" required>
                 </div>
         
                 <div class="input__nachname animat">
-                    <input name="lname" id="nachname" placeholder="Nachname..." type="text" class="input__input">
+                    <input name="lname_support" id="nachname" placeholder="Nachname..." type="text" class="input__input">
                 </div>          
                     
                 <div class="input__email animat">                   
                     <label for="email">E-Mail:</label>
-                    <input name="email" id="email" placeholder="E-Mail..." type="email" class="input__input input__email" required>
+                    <input name="email_support" id="email" placeholder="E-Mail..." type="email" class="input__input input__email" required>
                 </div>               
                     
-            </div>
+            </div>           
+            
 
             <div class="input__title">
                 <label for="message">Beschreiben Sie das Problem:</label>
-                <textarea id="message" class="animat" placeholder="Hier schreiben..." name="message" required></textarea>
+                <textarea id="message" class="animat" placeholder="Hier schreiben..." name="message_support" required></textarea>
             </div>
             
             <button class="button__senden animat"> <input type="submit" style=" all:unset;"> </button>
                  
         </form>
+        
+        <form id="form1" action="save_user.php" method="post" style="display:none;"></form>
+        <form id="form2" action="send.php" method="post" style="display:none;"></form>
+        
     </div> 
-            <!--PHP -->
-    <?php    
-    
-
-    //gebt die Datai
-    //if (!isset($_POST['name']) and !isset($_POST['lname']) and !isset($_POST['email']) ) }
-       
-    ?>
-
 
     <!-- um dem Benutzer eine Rückmeldung über den Status seiner Buchung zu geben-->
     <div id="ruckinfo" class="hidden"></div>
@@ -283,23 +271,23 @@
 
     <div class="modal_weaper">
     
-        <form action="#" class="input">
+        <form  action="terminReserv.php" method="post" id="termin_reserv"  class="input">
             
             <div class="weaper">
                 <div class="inpuut__contact">
 
                     <div class="input__name animat">                    
                         <label for="name">Name:</label>
-                        <input id="name"placeholder="Name..." type="text" class="input__input">
+                        <input name="name_termin" id="name_termin"placeholder="Name..." type="text" class="input__input">
                     </div>
         
                     <div class="input__nachname animat">
-                        <input id="nachname" placeholder="Nachname..." type="text" class="input__input">
+                        <input name="nachname_termin" id="nachname_termin" placeholder="Nachname..." type="text" class="input__input">
                     </div>          
                     
                     <div class="input__email animat">                   
                         <label for="email">E-Mail:</label>
-                        <input id="email" placeholder="E-Mail..." type="email" class="input__input input__email">
+                        <input name="email_termin" id="email_termin" placeholder="E-Mail..." type="email" class="input__input input__email">
                     </div>               
                     
                 </div>
@@ -308,18 +296,18 @@
 
                     <div class="termin__datum animat">
                         <label for="date">Gewünschte Datum:</label>
-                        <input type="date" id="date" required class="datepicker">
+                        <input name="date_termin" type="date" id="date" required class="datepicker">
                     </div>
         
                     <div class="termin__datum animat">
                         <label for="time">Gewünschte Uhrzeit:</label>
-                        <input type="time" id="time" required>
+                        <input name="time_termin" type="time" id="time" required>
                     </div> 
 
                 </div>                  
             
             <div>
-                <button id="ternin_buchen" class="button__senden animat" type="submit" >Termin buchen</button>
+                <button  class="button__senden animat" type="submit" >Termin buchen</button>
             </div>            
         </form> 
     </div>
@@ -395,11 +383,12 @@
         <div class="bewerb_upload">
 
             <h2>Ihre Bewerbung im PDF-Format herunterladen:</h2>
-            <div class="bewerb_input">
-                <input class="animat2" type="file" id="pdf_file" accept="aplication/pdf" required>
-            </div>           
-
-            <button onclick="uploadPDF()" class="button__senden animat">Upladen</button>
+            <form action="uploads.php" method="post" enctype="multipart/form-data"> 
+                 <div class="bewerb_input">
+                     <input name="pdf_file" class="animat2" type="file" id="pdf_file" accept="aplication/pdf" required>
+                </div>                  
+                <input class="button__senden animat" type="submit">                  
+            </form>           
 
             <p id="status"></p>
         </div>

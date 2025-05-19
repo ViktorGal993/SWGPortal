@@ -9,7 +9,6 @@
     width:50%;    
     box-shadow: 0px 10px 50px 0px #94c11f;    
     background-color:rgba(253, 253, 253, 0.9);
-
     .close {
         padding: 10px;
         display: flex; 
@@ -19,25 +18,20 @@
         }
     }
 }
-
 .modal_weaper {    
     padding:10px 50px;
-    margin: 20px;   
-             
+    margin: 20px;     
     .header {     
         box-shadow: 0 10px 6px rgba(148,193,31, 0.1);        
-        border-bottom:2px solid #94c11f;          
-
+        border-bottom:2px solid #94c11f;        
         img {
             display: block;
             margin: 0 auto;
             width: 600px;
             padding: 10px;
         }
-
      } 
 }
-
 .modal__header {
     margin-top: 27px;
     display: flex;
@@ -60,12 +54,10 @@
         
     }
 }
-/*Support windows*/
 
 /*modal support*/
 .modal__support {            
-    display:none;  
-   
+    display:none;    
     .inpuut__contact {
         display: flex;
         align-items:end;
@@ -80,7 +72,6 @@
             margin:10px 10px 10px 0;
             padding:10px; 
         }
-
        .input__name {
             label {
                 display: block;
@@ -88,15 +79,13 @@
                 font-weight: 700;
             }
         }
-
         .input__email{
             width: 220px;
             label {
                 display: block;
                 font-size: 21px;
                 font-weight: 700;
-            }
-                
+            }                
         }        
     }
 
@@ -116,9 +105,9 @@
             padding:10px;
             border-radius: 5px;                
         }
-    }       
-
+    }      
 }
+
 /*button Einrichten*/
 .button__senden {
     font-weight: 700;
@@ -131,13 +120,11 @@
     box-shadow: 0 10px 6px rgba(12, 12, 12, 0.1);
     background:linear-gradient(to right, #D9D9D9, #94c11f );       
 }
-
 .button__senden:hover{
     background:linear-gradient(to right,#94c11f, #D9D9D9 );
 } 
 
 /*modals Termin*/
-
 .modal__termin {         
     .inpuut__contact {
         display: flex;
@@ -153,7 +140,6 @@
             margin:10px 10px 10px 0;
             padding:10px; 
         }
-
        .input__name {
             label {
                 display: block;
@@ -161,19 +147,15 @@
                 font-weight: 800;
             }
         }
-
         .input__email{
             width: 220px;
             label {
                 display: block;
                 font-size: 21px;
                 font-weight: 700;
-            }
-                
-        }
-        
-    }    
-    
+            }                
+        }        
+    }   
     .termin_date_zeit {
         margin: 30px 0 50px 0;
         display: flex;
@@ -195,10 +177,8 @@
                 margin:10px 30px 0 0;
                 padding:10px;                 
             }
-
         }
     }
-
 }
 
 /* Modals Download*/
@@ -209,34 +189,27 @@
     min-height: 60px;
     border-bottom:2px solid #abaca8;
     padding: 10px;
-
     .download_content {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
         align-items: center;
         margin: 0 10px;
-    }
-            
+    }            
     a {
         font-size: 20px;
         font-weight:800;                                  
-    }
-    
+    }    
     button {
         min-height: 40px;   
-        margin: 0; 
-                              
+        margin: 0;                               
     }
 }
-       
-    
-/* modal Bewerbung*/    
-
+        
+/* modal Bewerbung*/   
 .modal_bewerb {
     display: none;
     /*background: url("../imgg/swg_bewerb.jpg")  center/cover no-repeat;*/
-
     .title_bewerb{
         text-align: center;
         padding:50px 10px;
@@ -249,9 +222,7 @@
             text-transform: lowercase;
             padding-left:10%;
         }
-
     }
-
     .bewerb_upload {
         margin-top: 40px;
         display: flex;
@@ -260,10 +231,8 @@
         h2 {
             padding: 10px;
             font-size: 25px;
-            font-weight: 800;
-            
+            font-weight: 800;            
         }
-
         .bewerb_input {            
             padding: 20px 10px;
             #pdf_file {

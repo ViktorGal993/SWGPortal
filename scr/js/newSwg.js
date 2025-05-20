@@ -40,6 +40,8 @@ let kontakt = document.querySelector(".kontakt"),
 let support = document.querySelector(".support__button"),
     support_modal = document.querySelector(".modal__support"),
     close_support = document.querySelector(".close__support");
+   
+    
 
     support.addEventListener("click", function(){
         support_modal.style.display = "block";        
@@ -50,6 +52,8 @@ let support = document.querySelector(".support__button"),
     close_support.addEventListener("click", function(){
         support_modal.style.display = "none";
     });
+
+   
 
     /*Kunden Portal window einrichten*/ /*
     let portal = document.querySelector(".portal__button"),
@@ -194,71 +198,70 @@ let modal_bewerb_btn = document.querySelector(".button_bewerbung"),
        }); 
     });
 
+// die form Support auf zwei action sendne
 
 const form = document.getElementById('massage_suport');    
-form.addEventListener('submit', function (e) {        
-    e.preventDefault(); // Предотвращаем стандартное поведение формы
-    // Формируем данные из формы        
+form.addEventListener('submit', function (e) {
+// Verhindern des Standardverhaltens des Formulars
+    e.preventDefault(); 
+    // Datei von Form erstellen        
     const formData = new FormData(form);
 
-// Отправка на первый action        
+// Sendung auf erste action      
 fetch('save_user.php', {            
     method: 'POST',            
     body: formData        
 }).then(response => {            
     if (response.ok) {                
-        console.log('Данные успешно отправлены на /action1');            
+        console.log('Данные успешно отправлены на /action1'); 
+                
     }        
 });
-        // Отправка на второй action        
+// Sendung auf zweite action       
 fetch('send.php', {            
     method: 'POST',            
     body: formData        
 }).then(response => {            
     if (response.ok) {                
-        console.log('Данные успешно отправлены на /action2');            
+        console.log('Данные успешно отправлены на /action2');
+              
+                
     }        
-});    
-
+}); 
+//warten 1 Sekunde
+setTimeout(()=>{
+        document.querySelector(".modal__support").style.display='none';  
+    },1000);
+    //leren das Form
+this.reset();
+    
+ 
 });
 
 
+// modal Ruckruf
 
-
-
+let ruckruf_btn = document.querySelector(".ruckruf"),
+    modal_ruckruf = document.querySelector(".modal_ruckruf"),
+    close_ruckruf = document.querySelector(".close__ruckruf");
+   
     
 
-/*
-//senden Email
-function sendToMultipleForms() {
-const mainForm = document.getElementById('massage_suport');
+    ruckruf_btn.addEventListener("click", function(){
+        modal_ruckruf.style.display = "block";
+        support_modal.style.display = "none";        
+        termin_modal.style.display = "none";
+        modal_download.style.display = "none";
+        modal_bewerb.style.display = "none";        
+    });
+    close_ruckruf.addEventListener("click", function(){
+         modal_ruckruf.style.display = "none";
+    });
 
-// Копируем данные в первую форму
-const form1 = document.getElementById('form1');
-copyData(mainForm, form1);
-form1.submit(); // Отправка в send1.php
 
-// Копируем данные во вторую форму
-const form2 = document.getElementById('form2');
-copyData(mainForm, form2);
-form2.submit(); // Отправка в send2.php
 
-}
 
-function copyData(sourceForm, targetForm) {
-const formData = new FormData(sourceForm);
-formData.forEach((value, key) => {
-let input = targetForm.querySelector(`[name="${key}"]`);
-if (!input) {
-input = document.createElement('input');
-input.type = 'hidden';
-[input.name] = key;
-targetForm.appendChild(input);
-}
-input.value = value;
-});
-}
-*/
-    
+
+
     
     

@@ -58,8 +58,8 @@
 
         <div class="container">
             
-            <h2 class="title center_uppercase "> <span>SWG </span> Datensysteme</h2>          
-
+            <h2 class="title center_uppercase "> <span>SWG </span> Datensysteme</h2>      
+                         
             <div class="grid_content center_uppercase">
 
               <button class="support__button animat">
@@ -77,7 +77,7 @@
                             <ul>
                              <li class="anruf kontakt_link hover_green animat2"><a href="tel:+49851958080">Jetzt Anrufen</a></li>
                              <li class="termin kontakt_link hover_green animat2" ><button class="termin" href="#">termin buchen</button></li>
-                             <li class="zuruckruf kontakt_link hover_green animat2"><a href="#">Rückruf anfordern</a></li>
+                             <li class="zuruckruf kontakt_link hover_green animat2"><button class="ruckruf" href="#">Rückruf anfordern</button></li>
                             </ul>                                               
                       </div>
                         <img src="scr/imgg/menu/kontakt.jpg" alt="kontakt">
@@ -109,9 +109,6 @@
                         </div> 
                     </div>
                 </a>
-
-
-
 
                 <button class="button_bewerbung">
                     <div class="bewert animat">
@@ -200,7 +197,8 @@
 
 <!--Modalle Fenster-->
     
-    <!-- Modals support -->         
+    <!-- Modals support -->   
+
 
 <div class="modal modal__support">
     <div class="close close__support">
@@ -214,7 +212,7 @@
     
     <div class="modal_weaper">
 
-        <form id="massage_suport" action="save_user.php" method="post" class="input" >            
+        <form id="massage_suport" action="send.php" method="post" class="input" >            
             
             <div class="inpuut__contact">
 
@@ -233,27 +231,24 @@
                     <input name="email_support" id="email" placeholder="E-Mail..." type="email" class="input__input input__email" required>
                 </div>               
                     
-            </div>           
+            </div>                   
             
-
             <div class="input__title">
                 <label for="message">Beschreiben Sie das Problem:</label>
                 <textarea id="message" class="animat" placeholder="Hier schreiben..." name="message_support" required></textarea>
             </div>
             
-            <button class="button__senden animat"> <input type="submit" style=" all:unset;"> </button>
+            <button class="support_absenden button__senden animat"> <input type="submit" style=" all:unset;"> </button>
                  
         </form>
-        
-        <form id="form1" action="save_user.php" method="post" style="display:none;"></form>
-        <form id="form2" action="send.php" method="post" style="display:none;"></form>
-        
+          
     </div> 
-
+    
     <!-- um dem Benutzer eine Rückmeldung über den Status seiner Buchung zu geben-->
     <div id="ruckinfo" class="hidden"></div>
 
 </div>
+
 <!--ende des Modals support*/-->  
 
 
@@ -298,11 +293,25 @@
                         <label for="date">Gewünschte Datum:</label>
                         <input name="date_termin" type="date" id="date" required class="datepicker">
                     </div>
-        
+                    <!--
                     <div class="termin__datum animat">
                         <label for="time">Gewünschte Uhrzeit:</label>
-                        <input name="time_termin" type="time" id="time" required>
+                        <input name="time_termin" type="time" id="time" required min:"9:00" max="18:00" step="3600">                      
                     </div> 
+                     -->
+                    <div class="select_zeit termin__datum" >
+                            <label for="termin _time">Gewünschte Uhrzeit:</label>
+                            <select name="time_termin" type="time" id="time">
+                                <option value="09:00">09:00</option>
+                                <option value="10:00">10:00</option>
+                                <option value="12:00">12:00</option>
+                                <option value="13:00">13:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                                <option value="17:00">17:00</option>
+                             </select>
+                     </div>
 
                 </div>                  
             
@@ -395,14 +404,71 @@
 
     </div> 
 </div>
+
+<!-- Modals Ruckruf -->   
+
+
+<div class="modal  modal_ruckruf"> 
+    <div class="close close__ruckruf"> 
+        <button class="animat"><img src="scr/iconss/close.svg" alt=""></button>   
+    </div> 
+    
+    <div class="modal__header">
+        <img src="scr/imgg/SWG_LOGO1.png" alt="logo1">
+        <h2><span>IT-SUPPORT </span><br>Bitte geben Sie die Detail des Problems</h2>        
+    </div>
+    
+    <div class="modal_weaper">
+
+        <form id="ruckruf" action="ruckruf.php" method="post" class="input" >            
+            
+            <div class="inpuut__contact">
+
+                <div class="input__name animat">
+                        
+                    <label for="name">Name:</label>
+                    <input name="name_ruckruf" id="name"placeholder="Name..." type="text" class="input__input" required>
+                </div>
+        
+                <div class="input__nachname animat">
+                    <input name="lname_ruckruf" id="nachname" placeholder="Nachname..." type="text" class="input__input">
+                </div>          
+                    
+                <div class="input__tel animat">                   
+                    <label for="phone">Telefonnummer:</label>
+                    <input name="phone" id="phone" placeholder="Ihre Telefonnummer..." type="tel" pattern="^\+?[0-9\s\-]{7,20}$" class="input__input input__email" required>
+                </div>               
+                
+            </div>
+
+            <div class="input__title ">
+                <label for="thema">Gesprächsthema:</label>
+                <textarea id="thema" class="animat" placeholder="Kurze Beschreibung..." name="ruckruf_thema" required></textarea>                    
+            </div>                   
+            
+            <button class="support_absenden button__senden animat"> <input type="submit" style=" all:unset;"> </button>
+                 
+        </form>
+          
+    </div> 
+    
+    <!-- um dem Benutzer eine Rückmeldung über den Status seiner Buchung zu geben-->
+    <div id="ruckinfo" class="hidden"></div>
+
+</div>
+
+<!--ende des Modals support*/-->  
+
+
+
+
 <!--Ende des Modals Bewerbungen-->
-
-
-
-  
+<!--  
+<div id ="message_support"> Vielen Dank für Ihre Anfrage! Ihre Daten wurden erfolgreich übermittelt. Unser Team wird sich so schnell wie möglich mit Ihnen in Verbindung setzen.
+ </div>  
+            -->
 </main>
-<!-- /#main-->
-
+<!-- main-->
 <script src="scr/js/newSwg.js"></script>
 </body>
 </html>

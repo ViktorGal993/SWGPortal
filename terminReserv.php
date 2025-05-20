@@ -7,6 +7,7 @@ $lname = $_POST['nachname_termin'];
 $email = $_POST['email_termin'];
 $date = $_POST['date_termin'];
 $time = $_POST['time_termin'];
+
 if ($name && $email && $lname && $date &&$time) { 
        try {        
         // Autocommit ausschalten       
@@ -43,5 +44,37 @@ if ($name && $email && $lname && $date &&$time) {
             else {    
                     echo "Alle Felder müssen ausgefüllt werden";
                 }
+
+//Email sendung
+$vollname = $name . " " . $lname;
+$subject = "Neue Termin-Anfrage über das SWG-Dienstleistungsportal.\n";
+$admin_mail = "swg.passau@gmail.com";
+
+    $email_content = "Name: $vollname,\r\n";
+    $email_content .= "E-Mail: $email\r\n\n";
+    $email_content .= "Date: $date\r\n";
+    $email_content .= "Zeit:  $time\r\n";
+
+    $headers = "From: $email\r\n";
+    $headers .= "Reply-To: $email\r\n";
+    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+
+    // E-Mail versenden
+    $mail_sent = mail($admin_mail,$subject,$email_content, $headers);
+
+     if ($mail_sent) {
+        echo "<p>Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.</p>";
+    } else {
+        echo "<p>Fehler beim Versenden der E-Mail.</p>";
+    }
+
+    // Auto Antwort
+    $subject_reply = "Vielen Dank für Ihre Termin-Anfrage.";
+    $message_replay= "Unser Team wird sich zeitnah mit Ihnen in Verbindung setzen.";
+
+     $mail_reply = mail($email,$subject_reply,$message_replay);
+
+
+
 
 ?>

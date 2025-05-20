@@ -6,9 +6,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = htmlspecialchars($_POST['email_support']);
     $message = htmlspecialchars($_POST['message_support']);
     $vollname = $name . " " . $lname;
+    $subject = "Neue Anfrage von Seite";
 
     // E-Mail-Empfänger 
-    $to = "swg.passau@gmail.com";
+    $admin_mail = "swg.passau@gmail.com";
 
     // E-Mail-Header
     $headers = "From: $email\r\n";
@@ -16,13 +17,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
     // E-Mail-Inhalt
-    $email_content = "Name: $vollname, \n";
-    $email_content .= "E-Mail: $email\n\n";
-    $email_content .= "Nachricht:\n$message";
+    $email_content = "Name: $vollname,\r\n";
+    $email_content .= "E-Mail: $email\r\n\n";
+    $email_content .= "Nachricht:\n$message\r\n";
 
     // E-Mail versenden
-    $mail_sent = mail($to,$email_content, $headers);
+    $mail_sent = mail($admin_mail,$subject,$email_content, $headers);
 
+   
     // Rückmeldung an den Benutzer
     if ($mail_sent) {
         echo "<p>Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.</p>";
@@ -32,6 +34,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 } else {
     echo "<p>Ungültige Anfrage.</p>";
 }
+
+ // Auto Antwort
+    $subject_reply = "Vielen Dank, dass Sie sich gemeldet haben.";
+    $message_replay= "Ihre Daten sind erfolgreich gesendet. Unser Team wird sich zeitnah mit Ihnen in Verbindung setzen.";
+
+     $mail_reply = mail($email,$subject_reply,$message_replay);
+
 ?>
 
 

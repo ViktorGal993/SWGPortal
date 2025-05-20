@@ -242,6 +242,25 @@ header{
     
 }
 
+
+    /*
+    display: block;
+    position: fixed;
+    top:20px;
+    right: 20px;
+    background-color:#4caf50;
+    color:white;
+    padding: 16px 24px;
+    border-radius:8px;
+    box-shadow: 0 4px 8px rgb(0,0,0,0.2);
+    font-family: sans-serif;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.5s ease;
+    z-index: 9999;
+    */
+    
+
 /*rotating Image*/
 /*
 #rotatingImage{

@@ -313,8 +313,13 @@
                              </select>
                      </div>
 
-                </div>                  
-            
+                </div>   
+
+            <div  id="input_termin_thema">
+                <label id="termin_thema_label" for="termin_thema" style="">Thema:</label>
+                <textarea id="termin_thema" class="animat" placeholder="Kurze Beschreibung..." name="termin_thema" required></textarea>                    
+            </div>                 
+
             <div>
                 <button  class="button__senden animat" type="submit" >Termin buchen</button>
             </div>            

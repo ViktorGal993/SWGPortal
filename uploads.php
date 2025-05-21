@@ -1,7 +1,5 @@
 <?php
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {    
-
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {  
         if (isset($_FILES['pdf_file']) && $_FILES['pdf_file']['error'] == UPLOAD_ERR_OK) {        
 
                 $uploadDir = __DIR__ . '/scr/uploads/';
@@ -17,16 +15,57 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 // Перемещение файла       
                 if (move_uploaded_file($_FILES['pdf_file']['tmp_name'], $uploadFile)) { 
-                        echo "Datei erfolgreich hochgeladen!";        
-                        
-                        echo "<br> <a href='index.php'>Zurückkehren</a>";       
+                        echo "Datei erfolgreich hochgeladen, ";     
                 } 
                 else {            
                         echo "Datei nicht hochgeladen.";
-                        echo "<br> <a  href='index.php'>Zurückkehren</a>";     
+                            
                 }   
         } 
        
 }
 
+//Sendung Von Bewerbungsunterlagen per E-mail
+if (isset($_FILES['pdf_file']) && $_FILES['pdf_file']['error'] === 0) { 
+    $to = "swg.passau@gmail.com";    
+    $subject = "Neue Bewerbung";    
+    $message = "Neue Bewerbungsunterlagen von SWG IT-Dienstleistungsportal";   
+    
+    //ablesung  
+    $file_data = file_get_contents($uploadFile); 
+    //kodierung in base64   
+    $encoded_content = chunk_split(base64_encode($file_data)); 
+    //verteilun von Telen des Brifs (text + unterlagen)   
+    $boundary = md5("simple_boundary");
+//header 
+    $headers = "MIME-Version: 1.0\r\n";    
+    $headers .= "Content-Type: multipart/mixed; boundary=\"$boundary\"\r\n";
+//text
+    $body = "--$boundary\r\n";    
+    $body .= "Content-Type: text/plain; charset=\"utf-8\"\r\n\r\n";    
+    $body .= "$message\r\n";    
+//unterlagen
+    $body .= "--$boundary\r\n";    
+    $body .= "Content-Type: application/pdf; name=\"$uploadFile\"\r\n";    
+    $body .= "Content-Transfer-Encoding: base64\r\n";    
+    $body .= "Content-Disposition: attachment; filename=\"$uploadFile\"\r\n\r\n";    
+    $body .= "$encoded_content\r\n";    
+    $body .= "--$boundary--";
+//sendung
+    if (mail($to, $subject, $body, $headers)) {        
+        echo " Die Nachricht wurde gesendet.";    
+        echo "<br> <a  href='index.php'>Zurückkehren</a>";
+
+        } 
+        else {        
+            echo "Fehler beim Senden.";   
+            echo "<br> <a  href='index.php'>Zurückkehren</a>"; 
+        }
+        } else {    
+            echo "Die Datei wurde nicht hochgeladen.";
+            echo "<br> <a  href='index.php'>Zurückkehren</a>"; 
+        }
+            
+
 ?>
+

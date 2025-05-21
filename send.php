@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = htmlspecialchars($_POST['email_support']);
     $message = htmlspecialchars($_POST['message_support']);
     $vollname = $name . " " . $lname;
-    $subject = "Neue Anfrage von Seite";
+    $subject = "Neue Anfrage von SWG IT-Dienstleistungsportal";
 
     // E-Mail-Empfänger 
     $admin_mail = "swg.passau@gmail.com";

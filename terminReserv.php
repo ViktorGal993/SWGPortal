@@ -26,8 +26,7 @@ if ($name && $email && $lname && $date &&$time) {
         $stmt4->execute();
         // Transaktion bestätigen      
         $conn->commit();        
-        echo "Die Daten wurden erfolgreich gespeichert!"; 
-        echo " <a href='index.php'>Zurückkehren</a>";   
+        echo " ";   
         } 
         catch (Exception $e) {        
             // zurücksetzen beim Fehler      
@@ -64,8 +63,10 @@ $admin_mail = "swg.passau@gmail.com";
 
      if ($mail_sent) {
         echo "<p>Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.</p>";
+        echo "<a href='index.php'>Zurückkehren</a>";
     } else {
         echo "<p>Fehler beim Versenden der E-Mail.</p>";
+        echo "<a href='index.php'>Zurückkehren</a>";
     }
 
     // Auto Antwort

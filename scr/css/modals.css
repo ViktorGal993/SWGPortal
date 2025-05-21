@@ -183,8 +183,13 @@
             }
             
         }
-    }
-}
+    } 
+   
+
+}   
+            
+
+
 #time {
     width: 170px;
     border-radius: 5px;
@@ -195,6 +200,14 @@
     padding:10px;  
    
 }
+
+#termin_thema_label {
+    display: block;
+}
+
+
+
+
 
 
 /* Modals Download*/
@@ -329,6 +342,10 @@
     }  
     
 }
+
+
+
+
 
 
 

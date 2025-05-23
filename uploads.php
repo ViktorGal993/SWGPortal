@@ -53,8 +53,7 @@ if (isset($_FILES['pdf_file']) && $_FILES['pdf_file']['error'] === 0) {
     $body .= "--$boundary--";
 //sendung
     if (mail($to, $subject, $body, $headers)) {        
-        echo " Die Nachricht wurde gesendet.";    
-        echo "<br> <a  href='index.php'>Zurückkehren</a>";
+         header("Location:index.php");
 
         } 
         else {        

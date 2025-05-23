@@ -24,9 +24,9 @@ if ($name && $lname && $tel) {
         $stmt2->bind_param("is", $userId, $thema);        
         $stmt2->execute();
         // Transaktion bestätigen      
-        $conn->commit();        
-        echo "Die Daten wurden erfolgreich gespeichert!"; 
-        echo "<br> <a href='index.php'>Zurückkehren</a>";   
+        $conn->commit();  
+          
+         
         } 
         catch (Exception $e) {        
             // zurücksetzen beim Fehler      
@@ -63,7 +63,8 @@ $admin_mail = "swg.passau@gmail.com";
     $mail_sent = mail($admin_mail,$subject,$email_content, $headers);
 
      if ($mail_sent) {
-        echo "<p>Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.</p>";
+        //zuruck zu Hauptseite    
+         header("Location:index.php");
     } else {
         echo "<p>Fehler beim Versenden der E-Mail.</p>";
       }

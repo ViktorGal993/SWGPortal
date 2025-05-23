@@ -24,6 +24,8 @@ for(let i=0;i<icons_animation2.length;i++){
     }        
 }
 
+let feedback = document.querySelector('.end_message'); //Nachricht Message einrichten
+
 /*Kontakt Liste einrichten*/
 let kontakt = document.querySelector(".kontakt"),
     liste = document.querySelector(".kontakt_funktion"),
@@ -85,6 +87,8 @@ let support = document.querySelector(".support__button"),
         termin_modal.style.display = "none";
     });
 */
+
+//Termin Fenster einrichtung
 let termin = document.querySelectorAll(".termin"),
 termin_modal = document.querySelector(".modal__termin"),
 close_termin = document.querySelector(".close__termin");
@@ -99,6 +103,20 @@ for(let i =0;i< termin.length; i++) {
 }
 close_termin.addEventListener("click", function(){
     termin_modal.style.display = "none";
+});
+
+const form_termin = document.getElementById('termin_reserv'); 
+form_termin.addEventListener('submit', function (e) {
+     termin_modal.style.display = "none";
+
+     feedback.style.display= "block";
+//warten 1,5 Sekunde
+setTimeout(()=>{
+        
+        feedback.style.display= "none";
+    },1500);
+
+
 });
 
      /*Frage einrichten  (2ein für laptop version, ein für mobil) */
@@ -184,6 +202,18 @@ let modal_bewerb_btn = document.querySelector(".button_bewerbung"),
         modal_bewerb.style.display = "none";
     });
 
+     const form_bewerbung = document.getElementById('uploads'); 
+    form_bewerbung.addEventListener('submit', function (e) {
+     modal_bewerb.style.display = "none";
+
+     feedback.style.display= "block";
+//warten 1,5 Sekunde
+setTimeout(()=>{        
+        feedback.style.display= "none";
+    },2000);
+
+});
+
     /*mobil Nav Einrichtung*/
     document.addEventListener("DOMContentLoaded", function() {        // um die Seite voll geladen
         const menu_Toggle = document.getElementById("menu_toggle"),
@@ -199,6 +229,8 @@ let modal_bewerb_btn = document.querySelector(".button_bewerbung"),
     });
 
 // die form Support auf zwei action sendne
+
+
 
 const form = document.getElementById('massage_suport');    
 form.addEventListener('submit', function (e) {
@@ -228,12 +260,17 @@ fetch('send.php', {
                 
     }        
 }); 
-//warten 1 Sekunde
-setTimeout(()=>{
-        document.querySelector(".modal__support").style.display='none';  
-    },1000);
-    //leren das Form
+
+document.querySelector(".modal__support").style.display='none'; 
+feedback.style.display= "block";
+//warten 1,5 Sekunde
+setTimeout(()=>{ 
+        feedback.style.display= "none";
+    },1500);
+//leren das Form
 this.reset();
+
+
     
  
 });
@@ -258,7 +295,17 @@ let ruckruf_btn = document.querySelector(".ruckruf"),
          modal_ruckruf.style.display = "none";
     });
 
+    const form_ruckruf = document.getElementById('ruckruf'); 
+    form_ruckruf.addEventListener('submit', function (e) {
+     modal_ruckruf.style.display = "none";
 
+     feedback.style.display= "block";
+//warten 1,5 Sekunde
+setTimeout(()=>{        
+        feedback.style.display= "none";
+    },1500);
+
+});
 
 
 

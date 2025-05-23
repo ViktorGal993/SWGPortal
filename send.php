@@ -41,6 +41,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
      $mail_reply = mail($email,$subject_reply,$message_replay);
 
+       header("Location:index.php");
+
 ?>
 
 

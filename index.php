@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="scr/css/style.css">
     <link rel="stylesheet" href="scr/css/modals.css">
     <link rel="stylesheet" href="scr/css/Adaptation.css">
+    <link rel ="icon" href="scr/iconss/SWG.png" type="image/png">
     
     
 </head>
@@ -266,7 +267,7 @@
 
     <div class="modal_weaper">
     
-        <form  action="terminReserv.php" method="post" id="termin_reserv"  class="input">
+        <form name="termin_reserv"  action="terminReserv.php" method="post" id="termin_reserv"  class="input">
             
             <div class="weaper">
                 <div class="inpuut__contact">
@@ -397,7 +398,7 @@
         <div class="bewerb_upload">
 
             <h2>Ihre Bewerbung im PDF-Format herunterladen:</h2>
-            <form action="uploads.php" method="post" enctype="multipart/form-data"> 
+            <form action="uploads.php" method="post" enctype="multipart/form-data" id="uploads"> 
                  <div class="bewerb_input">
                      <input name="pdf_file" class="animat2" type="file" id="pdf_file" accept="aplication/pdf" required>
                 </div>                  
@@ -463,6 +464,10 @@
 </div>
 
 <!--ende des Modals support*/-->  
+
+<div class="end_message">
+    <h2>Ihre Anfrage wurde erfolgreich weitergeleitet...<br><span>Vielen Dank für Ihr Vertrauen.</span></h2>
+</div>
 
 
 

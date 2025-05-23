@@ -7,6 +7,7 @@ $lname = $_POST['nachname_termin'];
 $email = $_POST['email_termin'];
 $date = $_POST['date_termin'];
 $time = $_POST['time_termin'];
+$message =$_POST['termin_thema'];
 
 if ($name && $email && $lname && $date &&$time) { 
        try {        
@@ -20,9 +21,9 @@ if ($name && $email && $lname && $date &&$time) {
         // Abrufen der ID des zuletzt eingefügten Eintrags       
         $userId = $conn->insert_id;
         // Daten in die zweite Tabelle einfügen       
-        $sql4 = "INSERT INTO termin (Kunde_ID, Datum, Uhrzeit) VALUES (?, ?,?)";        
+        $sql4 = "INSERT INTO termin (Kunde_ID, Datum, Uhrzeit, Thema) VALUES (?, ?,?,?)";        
         $stmt4 = $conn->prepare($sql4);        
-        $stmt4->bind_param("iss", $userId, $date, $time);        
+        $stmt4->bind_param("isss", $userId, $date, $time, $message);        
         $stmt4->execute();
         // Transaktion bestätigen      
         $conn->commit();        
@@ -53,6 +54,7 @@ $admin_mail = "swg.passau@gmail.com";
     $email_content .= "E-Mail: $email\r\n\n";
     $email_content .= "Date: $date\r\n";
     $email_content .= "Zeit:  $time\r\n";
+    $email_content .= "Thema:  $message\r\n";
 
     $headers = "From: $email\r\n";
     $headers .= "Reply-To: $email\r\n";
@@ -60,14 +62,18 @@ $admin_mail = "swg.passau@gmail.com";
 
     // E-Mail versenden
     $mail_sent = mail($admin_mail,$subject,$email_content, $headers);
-
+    
      if ($mail_sent) {
+        header("Location:index.php");
+        /*
         echo "<p>Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.</p>";
         echo "<a href='index.php'>Zurückkehren</a>";
+        */
     } else {
         echo "<p>Fehler beim Versenden der E-Mail.</p>";
         echo "<a href='index.php'>Zurückkehren</a>";
     }
+        
 
     // Auto Antwort
     $subject_reply = "Vielen Dank für Ihre Termin-Anfrage.";

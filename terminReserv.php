@@ -45,43 +45,71 @@ if ($name && $email && $lname && $date &&$time) {
                     echo "Alle Felder müssen ausgefüllt werden";
                 }
 
+// Дата и время
+$start = date('Ymd\THis', strtotime("$date $time"));
+$end = date('Ymd\THis', strtotime("$date $time +60 minutes"));
+$summary = "Termin für:  $name $lname";
+
+// ICS-контент
+$uid = uniqid();
+$ics = "BEGIN:VCALENDAR\r\n";
+$ics .= "VERSION:2.0\r\n";
+$ics .= "PRODID:-//TerminSystem//EN\r\n";
+$ics .= "CALSCALE:GREGORIAN\r\n";
+$ics .= "METHOD:REQUEST\r\n";
+$ics .= "BEGIN:VEVENT\r\n";
+$ics .= "UID:" . uniqid() . "@gmail.com\r\n";
+$ics .= "DTSTAMP:" . date('Ymd\THis') . "\r\n";
+$ics .= "DTSTART;TZID=Europe/Berlin:$start\r\n";
+$ics .= "DTEND;TZID=Europe/Berlin:$end\r\n";
+$ics .= "SUMMARY:$summary\r\n";
+$ics .= "DESCRIPTION:Über SWG Portal. Email: $email\r\n";
+$ics .= "STATUS:CONFIRMED\r\n";
+$ics .= "END:VEVENT\r\n";
+$ics .= "END:VCALENDAR\r\n";
+
 //Email sendung
 $vollname = $name . " " . $lname;
 $subject = "Neue Termin-Anfrage über das SWG-Dienstleistungsportal.\n";
 $admin_mail = "swg.passau@gmail.com";
+$mime_boundary = "----=_Part_".md5(time());
 
-    $email_content = "Name: $vollname,\r\n";
-    $email_content .= "E-Mail: $email\r\n\n";
-    $email_content .= "Date: $date\r\n";
-    $email_content .= "Zeit:  $time\r\n";
-    $email_content .= "Thema:  $message\r\n";
-
-    $headers = "From: $email\r\n";
-    $headers .= "Reply-To: $email\r\n";
-    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
-
+$headers = "From: $email\r\n";
+$headers .= "Reply-To: $email\r\n";    
+$headers .= "MIME-Version: 1.0\r\n";
+$headers .= "Content-Type:multipart/alternative; boundary=\"$mime_boundary\"\r\n";  
+   
+$email_content = "--$mime_boundary\r\n";
+$email_content .= "Content-Type:text/plain;charset=UTF-8\r\n";
+$email_content .= "Content-Transfer-Encoding:7bit\r\n\r\n";
+$email_content .= "Name: $vollname,\r\n";
+$email_content .= "E-Mail: $email\r\n\n";
+$email_content .= "Date: $date\r\n";
+$email_content .= "Zeit:  $time\r\n";
+$email_content .= "Thema:  $message\r\n";
+//ICS 
+$email_content .= "--$mime_boundary\r\n";
+$email_content .= "Content-Type: text/calendar; method=REQUEST; charset=UTF-8\r\n";
+$email_content .= "Content-Transfer-Encoding: 7bit\r\n\r\n";
+$email_content .= $ics ."\r\n";
+// Ende
+$email_content .= "--$mime_boundary--";  
+   
     // E-Mail versenden
-    $mail_sent = mail($admin_mail,$subject,$email_content, $headers);
-    
-     if ($mail_sent) {
-        header("Location:index.php");
+$mail_sent = mail($admin_mail,$subject,$email_content,$headers);    
+if ($mail_sent) {
+    header("Location:index.php");
         /*
         echo "<p>Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.</p>";
         echo "<a href='index.php'>Zurückkehren</a>";
         */
-    } else {
+} else {
         echo "<p>Fehler beim Versenden der E-Mail.</p>";
         echo "<a href='index.php'>Zurückkehren</a>";
-    }
-        
+    }        
 
     // Auto Antwort
     $subject_reply = "Vielen Dank für Ihre Termin-Anfrage.";
     $message_replay= "Unser Team wird sich zeitnah mit Ihnen in Verbindung setzen.";
-
      $mail_reply = mail($email,$subject_reply,$message_replay);
-
-
-
-
 ?>

@@ -250,8 +250,7 @@
 
 </div>
 
-<!--ende des Modals support*/-->  
-
+<!--ende des Modals support*/--> 
 
     <!-- Modals Termin -->         
 
@@ -398,11 +397,16 @@
         <div class="bewerb_upload">
 
             <h2>Ihre Bewerbung im PDF-Format herunterladen:</h2>
-            <form action="uploads.php" method="post" enctype="multipart/form-data" id="uploads"> 
+            <form action="uploads.php" method="post" enctype="multipart/form-data" id="uploads" name="uploads"> 
                  <div class="bewerb_input">
                      <input name="pdf_file" class="animat2" type="file" id="pdf_file" accept="aplication/pdf" required>
-                </div>                  
-                <input class="button__senden animat" type="submit">                  
+
+                     <label id="bewerb_text" for="bewerb_message" style=""></label>
+                    <textarea id="bewerb_message" class="animat" placeholder="Hier schreiben..." name="bewerb_message" required></textarea>
+                </div> 
+                
+                <input class="button__senden animat" type="submit">              
+                
             </form>           
 
             <p id="status"></p>

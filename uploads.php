@@ -12,10 +12,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         echo "Fehler: Nur PDF-Dateien sind erlaubt.";            
                         exit; 
                 }
-
                 // Перемещение файла       
                 if (move_uploaded_file($_FILES['pdf_file']['tmp_name'], $uploadFile)) { 
-                        echo "Datei erfolgreich hochgeladen, ";     
+                      /*  echo "Datei erfolgreich hochgeladen, ";     */
                 } 
                 else {            
                         echo "Datei nicht hochgeladen.";
@@ -25,11 +24,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
        
 }
 
+$bewerb_message = $_POST['bewerb_message'];
 //Sendung Von Bewerbungsunterlagen per E-mail
 if (isset($_FILES['pdf_file']) && $_FILES['pdf_file']['error'] === 0) { 
     $to = "swg.passau@gmail.com";    
     $subject = "Neue Bewerbung";    
-    $message = "Neue Bewerbungsunterlagen von SWG IT-Dienstleistungsportal";   
+    $message = "Neue Bewerbungsunterlagen von SWG IT-Dienstleistungsportal"; 
+    $nachricht = "Bewerbungsnachricht:\r\n$bewerb_message";     
     
     //ablesung  
     $file_data = file_get_contents($uploadFile); 
@@ -43,7 +44,8 @@ if (isset($_FILES['pdf_file']) && $_FILES['pdf_file']['error'] === 0) {
 //text
     $body = "--$boundary\r\n";    
     $body .= "Content-Type: text/plain; charset=\"utf-8\"\r\n\r\n";    
-    $body .= "$message\r\n";    
+    $body .= "$message\r\n\r\n";      
+    $body .= "$nachricht\r\n";
 //unterlagen
     $body .= "--$boundary\r\n";    
     $body .= "Content-Type: application/pdf; name=\"$uploadFile\"\r\n";    

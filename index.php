@@ -213,7 +213,7 @@
     
     <div class="modal_weaper">
 
-        <form id="massage_suport" action="send.php" method="post" class="input" >            
+        <form id="massage_suport" action="" method="post" class="input" >            
             
             <div class="inpuut__contact">
 

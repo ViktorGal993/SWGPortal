@@ -250,7 +250,7 @@ fetch('save_user.php', {
     }        
 });
 // Sendung auf zweite action       
-fetch('send.php', {            
+fetch('sendPHPMaler.php', {            
     method: 'POST',            
     body: formData        
 }).then(response => {            

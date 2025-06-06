@@ -1,4 +1,15 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+//  Composer herunterladen
+require 'vendor/autoload.php';
+// herunterladen .env
+$env = parse_ini_file(__DIR__ . '/.env');
+foreach ($env as $key => $value) {   
+     putenv("$key=$value");
+    }
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {  
         if (isset($_FILES['pdf_file']) && $_FILES['pdf_file']['error'] == UPLOAD_ERR_OK) {        
 
@@ -25,48 +36,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 $bewerb_message = $_POST['bewerb_message'];
-//Sendung Von Bewerbungsunterlagen per E-mail
-if (isset($_FILES['pdf_file']) && $_FILES['pdf_file']['error'] === 0) { 
-    $to = "swg.passau@gmail.com";    
-    $subject = "Neue Bewerbung";    
-    $message = "Neue Bewerbungsunterlagen von SWG IT-Dienstleistungsportal"; 
-    $nachricht = "Bewerbungsnachricht:\r\n$bewerb_message";     
-    
-    //ablesung  
-    $file_data = file_get_contents($uploadFile); 
-    //kodierung in base64   
-    $encoded_content = chunk_split(base64_encode($file_data)); 
-    //verteilun von Telen des Brifs (text + unterlagen)   
-    $boundary = md5("simple_boundary");
-//header 
-    $headers = "MIME-Version: 1.0\r\n";    
-    $headers .= "Content-Type: multipart/mixed; boundary=\"$boundary\"\r\n";
-//text
-    $body = "--$boundary\r\n";    
-    $body .= "Content-Type: text/plain; charset=\"utf-8\"\r\n\r\n";    
-    $body .= "$message\r\n\r\n";      
-    $body .= "$nachricht\r\n";
-//unterlagen
-    $body .= "--$boundary\r\n";    
-    $body .= "Content-Type: application/pdf; name=\"$uploadFile\"\r\n";    
-    $body .= "Content-Transfer-Encoding: base64\r\n";    
-    $body .= "Content-Disposition: attachment; filename=\"$uploadFile\"\r\n\r\n";    
-    $body .= "$encoded_content\r\n";    
-    $body .= "--$boundary--";
-//sendung
-    if (mail($to, $subject, $body, $headers)) {        
-         header("Location:index.php");
+$mailAdmin = new PHPMailer(true);
+try {    
+    $mailAdmin->isSMTP();    
+    $mailAdmin->Host = 'smtp.strato.de';    
+    $mailAdmin->SMTPAuth = true;    
+    $mailAdmin->Username = getenv('SMTP_USER');    
+    $mailAdmin->Password = getenv('SMTP_PASS');    
+    $mailAdmin->SMTPSecure = 'ssl';    
+    $mailAdmin->Port = 465;
+    $mailAdmin->setFrom(getenv('SMTP_USER'), 'SWG-Portal');    
+    $mailAdmin->addAddress(getenv('ADMIN'), 'Admin');
+    $mailAdmin->isHTML(true);    
+    $mailAdmin->Subject = 'Neue Bewerbungsunterlagen von SWG IT-Dienstleistungsportal';    
+    $mailAdmin->Body = "<b>Bewerbungsnachricht:</b><br>" . nl2br($bewerb_message); 
+    //PDF file 
+    $mailAdmin->addAttachment($uploadFile, 'Bewerbungsunterlagen.pdf'); 
+    //$mailAdmin->AltBody = "Name: $name\nEmail: $email\nnachricht:\n$message";
+    $mailAdmin->send();
+   
+    header("Location:index.php");} 
 
-        } 
-        else {        
-            echo "Fehler beim Senden.";   
-            echo "<br> <a  href='index.php'>Zurückkehren</a>"; 
-        }
-        } else {    
-            echo "Die Datei wurde nicht hochgeladen.";
-            echo "<br> <a  href='index.php'>Zurückkehren</a>"; 
-        }
-            
+   catch (Exception $e) {    
+        error_log("Fehler: " . $e->getMessage());    
+        echo 'Fehler beim Versenden der E-Mail.';}
+
 
 ?>
 

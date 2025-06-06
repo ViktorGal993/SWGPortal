@@ -1,4 +1,14 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+//  Composer herunterladen
+require 'vendor/autoload.php';
+// herunterladen .env
+$env = parse_ini_file(__DIR__ . '/.env');
+foreach ($env as $key => $value) {   
+     putenv("$key=$value");
+    }
 // Verbindung zur Datenbank
 include 'db_connection.php';
 // Abrufen von Daten aus Formular
@@ -6,6 +16,7 @@ $name = $_POST['name_ruckruf'];
 $lname = $_POST['lname_ruckruf'];
 $tel = $_POST['phone'];
 $thema = $_POST['ruckruf_thema'];
+$vollname = $name . " " . $lname;
 
 if ($name && $lname && $tel) { 
        try {        
@@ -45,29 +56,28 @@ if ($name && $lname && $tel) {
                     echo "<br> <a href='index.php'>Zurückkehren</a>";  
                 }
 
-
 //Email sendung
-$vollname = $name . " " . $lname;
-$subject = "Neue Anfrage für einen Rückruf über das SWG-Dienstleistungsportal.\n";
-$admin_mail = "swg.passau@gmail.com";
+$mailAdmin = new PHPMailer(true);
+try {    
+    $mailAdmin->isSMTP();    
+    $mailAdmin->Host = 'smtp.strato.de';    
+    $mailAdmin->SMTPAuth = true;    
+    $mailAdmin->Username = getenv('SMTP_USER');    
+    $mailAdmin->Password = getenv('SMTP_PASS');    
+    $mailAdmin->SMTPSecure = 'ssl';    
+    $mailAdmin->Port = 465;
+    $mailAdmin->setFrom(getenv('SMTP_USER'), 'SWG-Portal');    
+    $mailAdmin->addAddress(getenv('ADMIN'), 'Admin');
+    $mailAdmin->isHTML(true);    
+    $mailAdmin->Subject = 'Neue Ruckrufanfrage von das SWG-Dienstleistungsportal.';    
+    $mailAdmin->Body = "      <b>Name:</b> {$vollname}<br>      <b>Telefonnummer:</b> {$tel}<br> <b>Thema:<br> </b> {$thema}<br>";     
+   // $mailAdmin->AltBody = "Name: $name\nEmail: $email\nnachricht:\n$message";
+    $mailAdmin->send();
 
-    $email_content = "Name: $vollname,\r\n"; 
-    $email_content .= "Thema: $thema\r\n";      
-    $email_content .= "Telefonnummer: $tel\r\n";
-       
+    header("Location:index.php");} 
 
-   
-    $headers = "Content-Type: text/plain; charset=UTF-8\r\n";
-
-    // E-Mail versenden
-    $mail_sent = mail($admin_mail,$subject,$email_content, $headers);
-
-     if ($mail_sent) {
-        //zuruck zu Hauptseite    
-         header("Location:index.php");
-    } else {
-        echo "<p>Fehler beim Versenden der E-Mail.</p>";
-      }
-
+   catch (Exception $e) {    
+        error_log("Fehler: " . $e->getMessage());    
+        echo 'Fehler beim Versenden der E-Mail.';}
 
 ?>

@@ -199,8 +199,9 @@
 
 
 .modal {
-    top:8%;
+    top:6%;
 }
+
 
 .map_small {
     display: none;
@@ -258,8 +259,8 @@
 
     /*die Breite von Modals Fenster anpassen*/
     .modal {
-        top:3%;
-        width: 80%;
+        top:2%;
+        width: 85%;
         left:11%;
     }
 
@@ -271,10 +272,17 @@
             img {            
                 width: 100%;            
             }
-        } 
+        }     
 
      
     }
+
+    .modal__termin {
+  & .termin_date_zeit {
+    margin: 10px 0 20px 0;
+   }
+ }
+
 }
 
 @media screen and (max-width:424px){

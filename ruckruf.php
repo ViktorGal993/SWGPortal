@@ -73,6 +73,7 @@ try {
     $mailAdmin->Body = "      <b>Name:</b> {$vollname}<br>      <b>Telefonnummer:</b> {$tel}<br> <b>Thema:<br> </b> {$thema}<br>";     
    // $mailAdmin->AltBody = "Name: $name\nEmail: $email\nnachricht:\n$message";
     $mailAdmin->send();
+    echo"<script>window.location.href='http://service.swg-datensysteme.de/'</script>";
 
     header("Location:index.php");} 
 

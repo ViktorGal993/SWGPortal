@@ -53,41 +53,9 @@ let support = document.querySelector(".support__button"),
     });
     close_support.addEventListener("click", function(){
         support_modal.style.display = "none";
-    });
+    }); 
 
    
-
-    /*Kunden Portal window einrichten*/ /*
-    let portal = document.querySelector(".portal__button"),
-    kunden_potal_modal = document.querySelector(".kunden_portal"),
-    close_close_kp = document.querySelector(".close__portal");
-
-    portal.addEventListener("click", function(){
-        kunden_potal_modal.style.display = "flex";
-    });
-
-    close_close_kp.addEventListener("click", function(){
-        kunden_potal_modal.style.display = "none";
-    });
-
-*/
-
-/* Termin Kalender einrichten (Terminplanung)*/
-/*
-    let termin = document.querySelectorAll(".termin").forEach(btn =>{
-        btn.addEventListener('click',()=> 
-            termin_modal.style.display = "block",         
-            support_modal.style.display = "none")
-    }),    
-    termin_modal = document.querySelector(".modal__termin"),
-    close_termin = document.querySelector(".close__termin");    
-
-
-    close_termin.addEventListener("click", function(){
-        termin_modal.style.display = "none";
-    });
-*/
-
 //Termin Fenster einrichtung
 let termin = document.querySelectorAll(".termin"),
 termin_modal = document.querySelector(".modal__termin"),
@@ -228,9 +196,10 @@ setTimeout(()=>{
        }); 
     });
 
+
+    
+   
 // die form Support auf zwei action sendne
-
-
 
 const form = document.getElementById('massage_suport');    
 form.addEventListener('submit', function (e) {
@@ -268,10 +237,7 @@ setTimeout(()=>{
         feedback.style.display= "none";
     },1500);
 //leren das Form
-this.reset();
-
-
-    
+this.reset();    
  
 });
 

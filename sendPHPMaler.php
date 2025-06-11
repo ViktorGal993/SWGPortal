@@ -52,12 +52,13 @@ try {
     $autoReply->Body = "        <p>Hallo, <b>{$name}</b>! Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet. </p> "; 
     
     $autoReply->send();
-    header("Location:index.php");} 
+    header("Location:index.php");
+} 
 
-   catch (Exception $e) {    
-        error_log("Fehler: " . $e->getMessage());    
-        echo 'Fehler beim Versenden der E-Mail.';}
-        
+catch (Exception $e) {    
+    error_log("Fehler: " . $e->getMessage());    
+    echo 'Fehler beim Versenden der E-Mail.';
+}
 
         
 ?>

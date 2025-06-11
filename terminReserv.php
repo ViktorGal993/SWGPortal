@@ -115,7 +115,10 @@ try {
     $autoReply->Body = "        <p>Hallo, <b>{$name}</b>! Vielen Dank für Ihre Termin-Anfrage.<br>Unser Team wird sich zeitnah mit Ihnen in Verbindung setzen. </p> "; 
     
     $autoReply->send();
-    header("Location:index.php");} 
+    echo"<script>window.location.href='http://service.swg-datensysteme.de/'</script>";
+    header("Location:http://service.swg-datensysteme.de/");
+    exit();
+}
 
    catch (Exception $e) {    
         error_log("Fehler: " . $e->getMessage());    

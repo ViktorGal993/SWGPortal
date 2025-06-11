@@ -52,27 +52,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-/*
-$to = "swg.passau@gmail.com"; // Email, an die die Formulardaten gesendet werden.
-$subject = "Neue Anfrage von der Website ";
-$name = $_POST['name_support'];
-$lname = $_POST['lname_support'];
-$email = $_POST['email_support'];
-$message = $_POST['message_support'];;
 
-$body = "Имя: $name\\n";
-$body .= "Email: $email\\n";
-$body .= "Сообщение:\\n$message\\n";
-
-$headers = "From: $email\\r\\n";
-$headers .= "Reply-To: $email\\r\\n";
-$headers .= "Content-Type: text/plain; charset=UTF-8\\r\\n";
-
-if (mail($to, $name, $message)) {
-    echo "erfolgreich versendet";
-} else {
-    echo "Fehler beim Senden";
-}
-*/
-
-?>
